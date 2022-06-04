@@ -7,12 +7,13 @@ public class Bullet : MonoBehaviour
     private Movement movement;
     private Transform target;
 
-    public float power = 10;
+    private float power = 10f;
 
-    public void Setup(Transform target)
+    public void Setup(Transform target, float power)
     {
         movement = GetComponent<Movement>();
         this.target = target;
+        this.power = power;
     }
     private void Update()
     {

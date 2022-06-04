@@ -92,8 +92,7 @@ public class UnitWeapon : MonoBehaviour
     private void SpawnBullet()
     {
         GameObject clone = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-        clone.GetComponent<Bullet>().Setup(Target);
-        clone.GetComponent<Bullet>().power = power;
+        clone.GetComponent<Bullet>().Setup(Target, power);
     }
 
 }

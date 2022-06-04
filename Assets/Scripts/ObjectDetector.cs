@@ -6,7 +6,7 @@ public class ObjectDetector : MonoBehaviour
 {
     [SerializeField] private UnitSpawner unitSpawner;
 
-    private Camera camera;
+    private new Camera camera;
     private Ray ray;
     private RaycastHit hit;
 

@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum DestroyType
+{
+    Kill,
+    Arrice
+}
+
 public class Enemy : MonoBehaviour
 {
     private int wayPointCount;
@@ -10,8 +16,18 @@ public class Enemy : MonoBehaviour
     private Movement movement;
     private EnemySpawner ES;
 
-    public float Hp = 100f;
-    
+    public float maxHP;
+    private float currentHP;
+    private bool isDie = false;
+
+    public float MaxHP => maxHP;
+    public float CurrentHP => currentHP;
+
+    private void Awake()
+    {
+        currentHP = maxHP;
+    }
+
     public void Setup(EnemySpawner ES, Transform[] waypoints)
     {
         movement = GetComponent<Movement>();
@@ -54,20 +70,27 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            OnDie();
+            OnDie(DestroyType.Arrice);
+        }
+    }
+     
+    public void DMG(float dmg)
+    {
+        if (isDie) return;
+
+        currentHP -= dmg;
+
+
+        if (currentHP <= 0)
+        {
+            isDie = true;
+            OnDie(DestroyType.Kill);
         }
     }
 
-    public void DMG(float dmg)
+    public void OnDie(DestroyType type)
     {
-        if (Hp > 0) Hp -= dmg; 
-        else OnDie();
-        Debug.Log(Hp);
-    }
-
-    public void OnDie()
-    {
-        ES.DestroyEnemy(this);
+        ES.DestroyEnemy(type,this);
     }
 
 }

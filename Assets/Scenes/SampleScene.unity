@@ -3238,6 +3238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705691415}
   - component: {fileID: 705691414}
+  - component: {fileID: 705691416}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -3257,7 +3258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72bf0e62f206dad4698795440ec569a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrifab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
   hpSlinder: {fileID: 3743136966160974377, guid: 0c13e5d8e86219d4785649f3f9d16b00, type: 3}
   wayPoints:
   - {fileID: 1900193389}
@@ -3273,7 +3273,6 @@ MonoBehaviour:
   - {fileID: 1396862163}
   - {fileID: 1711872630}
   canvas: {fileID: 2010388729}
-  spawnTime: 0.5
   playerHP: {fileID: 1343000169}
 --- !u!4 &705691415
 Transform:
@@ -3290,6 +3289,142 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &705691416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705691413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab854ddae92e754eb93e5f6329b2c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 1
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 1
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 1
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 30
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  - spawnTime: 1
+    maxEnemyCount: 1
+    enemyPrefab: {fileID: 6097393911216189207, guid: 2b1d3fde131c6e94bac204a54fb39e41, type: 3}
+  ES: {fileID: 705691414}
+  PG: {fileID: 1343000171}
+  currentTime: 0
 --- !u!1001 &711724008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6034,7 +6169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06f6f02e36e2b94fa1943408da2c4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGold: 500
+  currentGold: 0
 --- !u!4 &1344711195 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5581590172457377902, guid: f1efe1803751a574382574271f9f4d6d, type: 3}

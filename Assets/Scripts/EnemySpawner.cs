@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrifab;
     [SerializeField] private GameObject hpSlinder;
     [SerializeField] private Transform[] wayPoints;
     [SerializeField] private Transform canvas;
-    [SerializeField] private float spawnTime;
     [SerializeField] private PlayerHP playerHP;
-    private List<Enemy> enemyList;
 
+
+    private Wave currentWave;
+    private List<Enemy> enemyList;
     public List<Enemy> EnemyList => enemyList;
 
     private void Awake()
@@ -20,18 +20,30 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine("SpawnEnemy");
     }
 
-    IEnumerator SpawnEnemy()
+    public void StartWave(Wave wave)
     {
-        while (true)
+        currentWave = wave;
+        StartCoroutine("SpawnEnemy");
+    }
+
+    private IEnumerator SpawnEnemy()
+    {
+        //생성된 에너미 숫자
+        int spawnEnemyCount = 0;
+
+        while (spawnEnemyCount < currentWave.maxEnemyCount)
         {
-            GameObject clone = Instantiate(enemyPrifab);
+            GameObject clone = Instantiate(currentWave.enemyPrefab);
             Enemy enemy = clone.GetComponent<Enemy>();
+
             enemy.Setup(this,wayPoints);
             enemyList.Add(enemy);
 
             spawnEnemyHP(clone);
 
-            yield return new WaitForSeconds(spawnTime);
+            spawnEnemyCount++;
+
+            yield return new WaitForSeconds(currentWave.spawnTime);
         }
     }
 

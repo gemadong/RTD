@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerGold : MonoBehaviour
 {
-    [SerializeField] private int currentGold = 500;
+    [SerializeField] private int currentGold = 0;
 
     public int CurrentGold
     {

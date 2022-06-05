@@ -8,17 +8,34 @@ public enum WeaponState
     Attack
 }
 
+
+
 public class UnitWeapon : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private SpriteRenderer SR;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private float attackRate = 0.5f;
     [SerializeField] private float attackRange = 2.0f;
     [SerializeField] private float power = 60f;
+    [SerializeField] private int level = 0;
 
     private WeaponState weaponState = WeaponState.Search;
     private Transform Target = null;
     private EnemySpawner ES;
+    public Tile currentTile = null;
+
+    public float Damage => power;
+    public float Rate => attackRate;
+    public float Range => attackRange;
+    public int Level => level + 1;
+    public Sprite imageUnit => SR.sprite;
+    public Color color => SR.color;
+
+    private void Awake()
+    {
+        SR = GetComponent<SpriteRenderer>();
+    }
 
     public void Setup(EnemySpawner ES)
     {

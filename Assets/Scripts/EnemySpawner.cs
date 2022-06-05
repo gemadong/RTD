@@ -14,6 +14,11 @@ public class EnemySpawner : MonoBehaviour
     private List<Enemy> enemyList;
     public List<Enemy> EnemyList => enemyList;
 
+    private int currentEnemyCount;
+
+    public int CurrentEnemyCount => currentEnemyCount;
+    public int MaxEnemyCount => currentWave.maxEnemyCount;
+
     private void Awake()
     {
         enemyList = new List<Enemy>();
@@ -23,6 +28,7 @@ public class EnemySpawner : MonoBehaviour
     public void StartWave(Wave wave)
     {
         currentWave = wave;
+        currentEnemyCount = currentWave.maxEnemyCount;
         StartCoroutine("SpawnEnemy");
     }
 
@@ -51,6 +57,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (type == DestroyType.Arrice) playerHP.DMG(1f);
 
+        currentEnemyCount--;
         enemyList.Remove(enemy);
         Destroy(enemy.gameObject);
     }

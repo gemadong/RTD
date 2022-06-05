@@ -8,16 +8,25 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private EnemySpawner ES;
     [SerializeField] private PlayerGold PG;
     private int currentWaveIndex = -1;
+    private int wave = 1;
 
     private float maxTime = 20f;
     public float currentTime = 0f;
+
+    public int CurrentWave => currentWaveIndex + 1;
+    public int Maxwave => waves.Length;
 
     private void Update()
     {
         if (ES.EnemyList.Count == 0)
         {
+            if (wave == CurrentWave)
+            {
+                PG.CurrentGold += 500;
+                wave++;
+            }
             currentTime += Time.deltaTime;
-            
+
             if (currentTime > maxTime)
             {
                 StartWave();

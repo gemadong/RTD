@@ -23,6 +23,7 @@ public class Tile : MonoBehaviour
     private void Awake()
     {
         SR = GetComponent<SpriteRenderer>();
+        SR.color = new Color(0.84f, 0.84f, 0.84f);
         IsBuildUnit = false;
         IsCheck = false;
         isUnit1 = false;

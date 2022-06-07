@@ -41,8 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5045443552442764499}
   - component: {fileID: 1310156716758044542}
-  - component: {fileID: -5158454988794795903}
   - component: {fileID: -5598810296023728757}
+  - component: {fileID: -169296731849309526}
   m_Layer: 0
   m_Name: Unit 5
   m_TagString: Unit
@@ -118,25 +118,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-5158454988794795903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7134979378241627987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa9907316f8817149a42a89cbe03d9e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5197268804230364834, guid: 70353f838f75c954cbf3f6115bae9c93, type: 3}
-  SR: {fileID: 0}
-  spawnPoint: {fileID: 8672172833594011725}
-  attackRate: 0.5
-  attackRange: 2
-  power: 60
-  level: 0
 --- !u!65 &-5598810296023728757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -150,3 +131,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.87999994, y: 0.5899999, z: 0.2}
   m_Center: {x: 0.14959995, y: 0, z: 0}
+--- !u!114 &-169296731849309526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134979378241627987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8abb2c51459ef9438b0fab8ac145c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 5197268804230364834, guid: 70353f838f75c954cbf3f6115bae9c93, type: 3}
+  SR: {fileID: 0}
+  spawnPoint: {fileID: 8672172833594011725}
+  attackRate: 0.5
+  attackRange: 2
+  power: 60
+  level: 0
+  currentTile: {fileID: 0}

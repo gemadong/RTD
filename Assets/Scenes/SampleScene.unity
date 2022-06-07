@@ -9031,14 +9031,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit1Prefab:
-  - {fileID: -5158454988794795903, guid: ab228a10c9a305b4aa779cbbb7c0e01f, type: 3}
-  - {fileID: -5158454988794795903, guid: 5598717f2822ad84b81554cb06e1c937, type: 3}
-  - {fileID: -5158454988794795903, guid: 0b4281858031f44429b7e663722b58d0, type: 3}
-  - {fileID: -5158454988794795903, guid: 6f6e1a532034a7e4aac2c781579a0e03, type: 3}
-  - {fileID: -5158454988794795903, guid: a4f4a09e3f9470a47b295496a078c1eb, type: 3}
-  - {fileID: -5158454988794795903, guid: 935a857fc068247489e165098fcdb469, type: 3}
-  - {fileID: -5158454988794795903, guid: bccc3090e8b3e6145aebd6422b637798, type: 3}
-  - {fileID: -5158454988794795903, guid: 2b22b13414dab46498a1645fe118756d, type: 3}
+  - {fileID: -637197344516723786, guid: 2b22b13414dab46498a1645fe118756d, type: 3}
+  - {fileID: 9187414288118077349, guid: ab228a10c9a305b4aa779cbbb7c0e01f, type: 3}
+  - {fileID: -597556148879590942, guid: 5598717f2822ad84b81554cb06e1c937, type: 3}
+  - {fileID: 7343678032156864384, guid: 0b4281858031f44429b7e663722b58d0, type: 3}
+  - {fileID: -169296731849309526, guid: 6f6e1a532034a7e4aac2c781579a0e03, type: 3}
+  - {fileID: -2508114244970543767, guid: a4f4a09e3f9470a47b295496a078c1eb, type: 3}
+  - {fileID: 7961294240115267142, guid: 935a857fc068247489e165098fcdb469, type: 3}
+  - {fileID: 7857257330338622331, guid: bccc3090e8b3e6145aebd6422b637798, type: 3}
   unit2Prefab: []
   unit3Prefab: []
   unit4Prefab: []
@@ -9046,6 +9046,46 @@ MonoBehaviour:
   ES: {fileID: 705691414}
   playerGold: {fileID: 1343000171}
   unitBuildGold: 100
+  unit1Lv1: []
+  unit1Lv2: []
+  unit1Lv3: []
+  unit1Lv4: []
+  unit1Lv5: []
+  unit2Lv1: []
+  unit2Lv2: []
+  unit2Lv3: []
+  unit2Lv4: []
+  unit2Lv5: []
+  unit3Lv1: []
+  unit3Lv2: []
+  unit3Lv3: []
+  unit3Lv4: []
+  unit3Lv5: []
+  unit4Lv1: []
+  unit4Lv2: []
+  unit4Lv3: []
+  unit4Lv4: []
+  unit4Lv5: []
+  unit5Lv1: []
+  unit5Lv2: []
+  unit5Lv3: []
+  unit5Lv4: []
+  unit5Lv5: []
+  unit6Lv1: []
+  unit6Lv2: []
+  unit6Lv3: []
+  unit6Lv4: []
+  unit6Lv5: []
+  unit7Lv1: []
+  unit7Lv2: []
+  unit7Lv3: []
+  unit7Lv4: []
+  unit7Lv5: []
+  unit8Lv1: []
+  unit8Lv2: []
+  unit8Lv3: []
+  unit8Lv4: []
+  unit8Lv5: []
 --- !u!4 &1811354464
 Transform:
   m_ObjectHideFlags: 0

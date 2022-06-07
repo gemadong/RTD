@@ -8,6 +8,8 @@ public class Tile : MonoBehaviour
     
     public SpriteRenderer SR;
 
+    public Color reColor = new Color(0.84f, 0.84f, 0.84f);
+
     public bool IsBuildUnit { set; get; }
     public bool IsCheck { set; get; }
 
@@ -23,7 +25,7 @@ public class Tile : MonoBehaviour
     private void Awake()
     {
         SR = GetComponent<SpriteRenderer>();
-        SR.color = new Color(0.84f, 0.84f, 0.84f);
+        reColor = new Color(0.84f, 0.84f, 0.84f);
         IsBuildUnit = false;
         IsCheck = false;
         isUnit1 = false;

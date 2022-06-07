@@ -8,7 +8,26 @@ public enum WeaponState
     Attack
 }
 
+public enum UnitValue
+{
+    Value1,
+    Value2,
+    Value3,
+    Value4,
+    Value5
+}
 
+public enum UnitType
+{
+    Type1,
+    Type2,
+    Type3,
+    Type4,
+    Type5,
+    Type6,
+    Type7,
+    Type8
+}
 
 public class UnitWeapon : MonoBehaviour
 {
@@ -20,7 +39,10 @@ public class UnitWeapon : MonoBehaviour
     [SerializeField] private float power = 60f;
     [SerializeField] private int level = 0;
 
+    public UnitType unitType;
+    public UnitValue unitValue;
     private WeaponState weaponState = WeaponState.Search;
+
     private Transform Target = null;
     private EnemySpawner ES;
     public Tile currentTile = null;
@@ -31,6 +53,7 @@ public class UnitWeapon : MonoBehaviour
     public int Level => level + 1;
     public Sprite imageUnit => SR.sprite;
     public Color color => SR.color;
+
 
     private void Awake()
     {
@@ -110,6 +133,11 @@ public class UnitWeapon : MonoBehaviour
     {
         GameObject clone = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
         clone.GetComponent<Bullet>().Setup(Target, power);
+    }
+
+    public void DestroyUnit()
+    {
+        Destroy(gameObject);
     }
 
 }

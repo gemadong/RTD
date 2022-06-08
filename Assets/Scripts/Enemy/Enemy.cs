@@ -17,8 +17,8 @@ public class Enemy : MonoBehaviour
     private EnemySpawner ES;
 
     public float maxHP;
-    private float currentHP;
-    private bool isDie = false;
+    protected float currentHP;
+    protected bool isDie = false;
 
     public float MaxHP => maxHP;
     public float CurrentHP => currentHP;
@@ -81,16 +81,20 @@ public class Enemy : MonoBehaviour
         currentHP -= dmg;
 
 
-        if (currentHP <= 0)
-        {
-            isDie = true;
-            OnDie(DestroyType.Kill);
-        }
+        Die();
     }
 
     public void OnDie(DestroyType type)
     {
         ES.DestroyEnemy(type,this);
+    }
+    protected virtual void Die()
+    {
+        if (currentHP <= 0)
+        {
+            isDie = true;
+            OnDie(DestroyType.Kill);
+        }
     }
 
 }

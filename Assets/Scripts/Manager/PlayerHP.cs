@@ -17,10 +17,6 @@ public class PlayerHP : MonoBehaviour
     public void DMG(float dmg)
     {
         currentHP -= dmg;
-        if (currentHP <= 0)
-        {
-            Debug.Log("게임 오버!");
-        }
     }
 
 

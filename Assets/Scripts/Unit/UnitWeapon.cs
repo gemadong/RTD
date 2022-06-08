@@ -31,19 +31,19 @@ public enum UnitType
 
 public class UnitWeapon : MonoBehaviour
 {
-    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] protected GameObject bulletPrefab;
     [SerializeField] private SpriteRenderer SR;
-    [SerializeField] private Transform spawnPoint;
+    [SerializeField] protected Transform spawnPoint;
     [SerializeField] private float attackRate = 0.5f;
     [SerializeField] private float attackRange = 2.0f;
-    [SerializeField] private float power = 60f;
+    [SerializeField] protected float power = 60f;
     [SerializeField] private int level = 0;
 
     public UnitType unitType;
     public UnitValue unitValue;
     private WeaponState weaponState = WeaponState.Search;
 
-    private Transform Target = null;
+    protected Transform Target = null;
     private EnemySpawner ES;
     public Tile currentTile = null;
 
@@ -129,7 +129,7 @@ public class UnitWeapon : MonoBehaviour
         }
     }
 
-    private void SpawnBullet()
+    protected virtual void SpawnBullet()
     {
         GameObject clone = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
         clone.GetComponent<Bullet>().Setup(Target, power);

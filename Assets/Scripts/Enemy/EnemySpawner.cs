@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private GameObject[] AntPrifab;
     [SerializeField] private GameObject hpSlinder;
     [SerializeField] private Transform[] wayPoints;
     [SerializeField] private Transform canvas;
     [SerializeField] private PlayerHP playerHP;
+    [SerializeField] private Mission mission;
 
 
     private Wave currentWave;
@@ -51,6 +53,27 @@ public class EnemySpawner : MonoBehaviour
 
             yield return new WaitForSeconds(currentWave.spawnTime);
         }
+    }
+    public void SpawnAnt(int i)
+    {
+        if (i == 0 && mission.isCool1 == true) return;
+        if (i == 1 && mission.isCool2 == true) return;
+        if (i == 2 && mission.isCool3 == true) return;
+
+        if (i == 0) mission.isCool1 = true;
+        if (i == 1) mission.isCool2 = true;
+        if (i == 2) mission.isCool3 = true;
+
+        GameObject clone = Instantiate(AntPrifab[i]);
+        Enemy enemy = clone.GetComponent<Enemy>();
+
+        enemy.Setup(this, wayPoints);
+        enemyList.Add(enemy);
+
+        spawnEnemyHP(clone);
+
+        currentEnemyCount++;
+
     }
 
     public void DestroyEnemy(DestroyType type, Enemy enemy)

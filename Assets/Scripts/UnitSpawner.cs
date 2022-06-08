@@ -10,8 +10,10 @@ public class UnitSpawner : MonoBehaviour
     [SerializeField] private UnitWeapon[] unit4Prefab;
     [SerializeField] private UnitWeapon[] unit5Prefab;
     [SerializeField] private EnemySpawner ES;
+    [SerializeField] private ObjectDetector OD;
     [SerializeField] private PlayerGold playerGold;
     [SerializeField] private int unitBuildGold = 100;
+
 
     public int Num;
 
@@ -118,5 +120,43 @@ public class UnitSpawner : MonoBehaviour
         unit[Num].DestroyUnit();
         unit[Num].currentTile.IsBuildUnit = false;
         unit.Remove(unit[Num]);
+    }
+
+    public void UnitSelling()
+    {
+        if (OD.unitWeapon != null)
+        {
+            if (OD.unitWeapon.unitValue == UnitValue.Value1)
+            {
+                unit1.Remove(OD.unitWeapon);
+                playerGold.CurrentGold += 50;
+            }
+            else if (OD.unitWeapon.unitValue == UnitValue.Value2)
+            {
+                unit2.Remove(OD.unitWeapon);
+                playerGold.CurrentGold += 50;
+            }
+            else if (OD.unitWeapon.unitValue == UnitValue.Value3)
+            {
+                unit3.Remove(OD.unitWeapon);
+                playerGold.CurrentGold += 50;
+            }
+            else if (OD.unitWeapon.unitValue == UnitValue.Value4)
+            {
+                unit4.Remove(OD.unitWeapon);
+                playerGold.CurrentGold += 50;
+            }
+            else if (OD.unitWeapon.unitValue == UnitValue.Value5)
+            {
+                unit5.Remove(OD.unitWeapon);
+                playerGold.CurrentGold += 50;
+            }
+
+            OD.unitWeapon.currentTile.SR.color = OD.unitWeapon.currentTile.reColor;
+            OD.unitWeapon.currentTile.IsCheck = false;
+            OD.unitWeapon.currentTile.IsBuildUnit = false;
+            OD.unitWeapon.DestroyUnit();
+            OD.IsCheckBlind = false;
+        }
     }
 }

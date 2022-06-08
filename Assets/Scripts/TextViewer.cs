@@ -18,9 +18,9 @@ public class TextViewer : MonoBehaviour
 
     private void Update()
     {
-        playerHPText.text = "HP : " + playerHP.CurrentHP + "/" + playerHP.MaxHP;
-        playerGoldText.text = "Gold : " + playerGold.CurrentGold.ToString();
-        waveText.text = "Wave : " + wave.CurrentWave + "/" + wave.Maxwave;
-        enemyCountText.text = "Enemy : " + ES.CurrentEnemyCount + "/" + ES.MaxEnemyCount;
+        playerHPText.text = "Life      " + playerHP.CurrentHP + "/" + playerHP.MaxHP;
+        playerGoldText.text = "Gold       " + playerGold.CurrentGold.ToString();
+        waveText.text = "Round  " + wave.CurrentWave + "/" + wave.Maxwave;
+        enemyCountText.text = "Enemy       " + ES.CurrentEnemyCount + "/" + ES.MaxEnemyCount;
     }
 }

@@ -11,13 +11,9 @@ public class ObjectDetector : MonoBehaviour
     private Ray ray;
     private RaycastHit hit;
 
-    private bool IsCheckBlind = false;
+    public bool IsCheckBlind = false;
     public Tile tile;
     public UnitWeapon unitWeapon;
-    public UnitWeapon unitWeapon2;
-    public UnitWeapon unitWeapon3;
-    public UnitWeapon unitWeapon4;
-    public UnitWeapon unitWeapon5;
 
     private void Awake()
     {

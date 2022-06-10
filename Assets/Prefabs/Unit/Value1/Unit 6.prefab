@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3361509730507750165}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.55, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -147,9 +147,10 @@ MonoBehaviour:
   SR: {fileID: 0}
   spawnPoint: {fileID: 8672172833594011725}
   attackRate: 0.5
-  attackRange: 2
+  attackRange: 2.6
   power: 60
   level: 0
+  Target: {fileID: 0}
   unitType: 5
   unitValue: 0
   currentTile: {fileID: 0}

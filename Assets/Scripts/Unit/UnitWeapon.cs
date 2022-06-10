@@ -34,16 +34,16 @@ public class UnitWeapon : MonoBehaviour
     [SerializeField] protected GameObject bulletPrefab;
     [SerializeField] private SpriteRenderer SR;
     [SerializeField] protected Transform spawnPoint;
-    [SerializeField] private float attackRate = 0.5f;
-    [SerializeField] private float attackRange = 2.0f;
+    [SerializeField] protected float attackRate = 0.5f;
+    [SerializeField] protected float attackRange = 2.0f;
     [SerializeField] protected float power = 60f;
     [SerializeField] private int level = 0;
+    [SerializeField] protected Transform Target = null;
 
     public UnitType unitType;
     public UnitValue unitValue;
     private WeaponState weaponState = WeaponState.Search;
 
-    protected Transform Target = null;
     private EnemySpawner ES;
     public Tile currentTile = null;
 
@@ -107,7 +107,7 @@ public class UnitWeapon : MonoBehaviour
         }
     }
 
-    private IEnumerator Attack()
+   protected virtual IEnumerator Attack()
     {
         while (true)
         {
@@ -124,8 +124,8 @@ public class UnitWeapon : MonoBehaviour
                 ChangeState(WeaponState.Search);
                 break;
             }
-            yield return new WaitForSeconds(attackRate);
             SpawnBullet();
+            yield return new WaitForSeconds(attackRate);
         }
     }
 

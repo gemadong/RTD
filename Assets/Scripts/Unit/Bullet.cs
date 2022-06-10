@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private Movement movement;
     private Transform target;
 
     private float power = 10f;
 
     public void Setup(Transform target, float power)
     {
-        movement = GetComponent<Movement>();
         this.target = target;
         this.power = power;
     }
@@ -20,7 +18,7 @@ public class Bullet : MonoBehaviour
         if (target != null)
         {
             Vector3 direction = (target.position - transform.position).normalized;
-            movement.MoveTo(direction);
+            transform.position += direction * 5f * Time.deltaTime;
         }
         else Destroy(gameObject);
     }

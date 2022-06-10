@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3361509730507750165}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.55, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -143,13 +143,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b022cb605aa1eb4fad0c32cf64e9cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5197268804230364834, guid: 70353f838f75c954cbf3f6115bae9c93, type: 3}
+  bulletPrefab: {fileID: 5197268804230364834, guid: 9b94f97b935fbec49909bf831ed83b52, type: 3}
   SR: {fileID: 0}
   spawnPoint: {fileID: 8672172833594011725}
   attackRate: 0.5
-  attackRange: 2
+  attackRange: 2.6
   power: 60
   level: 0
+  Target: {fileID: 0}
   unitType: 2
   unitValue: 0
   currentTile: {fileID: 0}

@@ -143,13 +143,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8abb2c51459ef9438b0fab8ac145c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5197268804230364834, guid: 70353f838f75c954cbf3f6115bae9c93, type: 3}
+  bulletPrefab: {fileID: 5197268804230364834, guid: e398798f1e5c30b48a5994cd3a8a1a7b, type: 3}
   SR: {fileID: 0}
   spawnPoint: {fileID: 8672172833594011725}
-  attackRate: 0.5
-  attackRange: 2
+  attackRate: 1
+  attackRange: 2.6
   power: 60
   level: 0
+  Target: {fileID: 0}
   unitType: 4
   unitValue: 4
   currentTile: {fileID: 0}

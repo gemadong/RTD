@@ -147,8 +147,8 @@ MonoBehaviour:
   SR: {fileID: 0}
   spawnPoint: {fileID: 8672172833594011725}
   attackRate: 0.5
-  attackRange: 2.6
-  power: 60
+  attackRange: 8
+  power: 80
   level: 0
   Target: {fileID: 0}
   unitType: 3

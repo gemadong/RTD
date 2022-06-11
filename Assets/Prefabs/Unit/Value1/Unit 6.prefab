@@ -143,10 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbfe2fc00e2ee145bf2695888f58f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5197268804230364834, guid: 70353f838f75c954cbf3f6115bae9c93, type: 3}
+  bulletPrefab: {fileID: 5197268804230364834, guid: 690b517f6475e634cad04902c9c8a7ba, type: 3}
   SR: {fileID: 0}
   spawnPoint: {fileID: 8672172833594011725}
-  attackRate: 0.5
+  attackRate: 1
   attackRange: 2.6
   power: 60
   level: 0

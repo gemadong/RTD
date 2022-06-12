@@ -12,6 +12,7 @@ public class UnitSpawner : MonoBehaviour
     [SerializeField] private EnemySpawner ES;
     [SerializeField] private ObjectDetector OD;
     [SerializeField] private PlayerGold playerGold;
+    [SerializeField] private Hidden hidden;
     [SerializeField] private int unitBuildGold = 100;
 
 
@@ -61,6 +62,7 @@ public class UnitSpawner : MonoBehaviour
         clone.GetComponent<UnitWeapon>().currentTile = tile;
         unit2.Add(clone);
         tile.SR.color = new Color(1f, 1f, 0.73f);
+        
     }
     public void SpawnUnit3(Transform tileTransform)
     {
@@ -129,11 +131,13 @@ public class UnitSpawner : MonoBehaviour
             if (OD.unitWeapon.unitValue == UnitValue.Value1)
             {
                 unit1.Remove(OD.unitWeapon);
+                hidden.Hidden1();
                 playerGold.CurrentGold += 50;
             }
             else if (OD.unitWeapon.unitValue == UnitValue.Value2)
             {
                 unit2.Remove(OD.unitWeapon);
+                hidden.Hidden3();
                 playerGold.CurrentGold += 50;
             }
             else if (OD.unitWeapon.unitValue == UnitValue.Value3)

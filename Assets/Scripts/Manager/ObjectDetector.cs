@@ -6,12 +6,15 @@ public class ObjectDetector : MonoBehaviour
 {
     [SerializeField] private UnitSpawner unitSpawner;
     [SerializeField] private UnitDataViewer UDV;
+    [SerializeField] private Mission mission;
+    [SerializeField] private Hidden hidden;
 
     private new Camera camera;
     private Ray ray;
     private RaycastHit hit;
 
     public bool IsCheckBlind = false;
+    public bool Iswindow = false;
     public Tile tile;
     public UnitWeapon unitWeapon;
 
@@ -21,7 +24,9 @@ public class ObjectDetector : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (mission.ispanel == true|| hidden.ispanel == true) Iswindow = true;
+        else if (mission.ispanel == false&& hidden.ispanel == false) Iswindow = false;
+        if (Input.GetMouseButtonDown(0) && Iswindow == false)
         {
             ray = camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
@@ -63,6 +68,8 @@ public class ObjectDetector : MonoBehaviour
                             tile.isUnit1 = true;
                             tile = null;
                             IsCheckBlind = false;
+                            hidden.Hidden1();
+                            hidden.Hidden2();
                         }
                         else
                         {
@@ -91,6 +98,9 @@ public class ObjectDetector : MonoBehaviour
                                     unitWeapon.DestroyUnit();
                                     unitSpawner.unit1.Remove(unitWeapon);
                                     unitSpawner.merge = false;
+                                    hidden.Hidden1();
+                                    hidden.Hidden2();
+                                    hidden.Hidden3();
                                 }
                             }
                             else if (unitWeapon.unitValue == UnitValue.Value2)
@@ -102,6 +112,7 @@ public class ObjectDetector : MonoBehaviour
                                     unitWeapon.DestroyUnit();
                                     unitSpawner.unit2.Remove(unitWeapon);
                                     unitSpawner.merge = false;
+                                    hidden.Hidden3();
                                 }
                             }
                             else if (unitWeapon.unitValue == UnitValue.Value3)

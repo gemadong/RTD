@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class Mission : MonoBehaviour
 {
+    [SerializeField] private Hidden hidden;
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject Mission1panel;
     [SerializeField] private GameObject Mission2panel;
     [SerializeField] private GameObject Mission3panel;
 
-    bool ispanel = false;
+    public bool ispanel = false;
 
     public bool isCool1 = false;
     public bool isCool2 = false;
@@ -67,6 +68,7 @@ public class Mission : MonoBehaviour
     {
         if (!ispanel)
         {
+            if(hidden.ispanel==true) hidden.IsPanel();
             panel.SetActive(true);
             ispanel = true;
         }

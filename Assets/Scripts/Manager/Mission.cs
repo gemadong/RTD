@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Mission : MonoBehaviour
 {
     [SerializeField] private Hidden hidden;
+    [SerializeField] private UpGrade upGrade;
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject Mission1panel;
     [SerializeField] private GameObject Mission2panel;
@@ -69,6 +70,7 @@ public class Mission : MonoBehaviour
         if (!ispanel)
         {
             if(hidden.ispanel==true) hidden.IsPanel();
+            if(upGrade.ispanel==true) upGrade.IsPanel();
             panel.SetActive(true);
             ispanel = true;
         }

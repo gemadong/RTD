@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class UnitSpawner : MonoBehaviour
 {
-    [SerializeField] private UnitWeapon[] unit1Prefab;
-    [SerializeField] private UnitWeapon[] unit2Prefab;
-    [SerializeField] private UnitWeapon[] unit3Prefab;
-    [SerializeField] private UnitWeapon[] unit4Prefab;
-    [SerializeField] private UnitWeapon[] unit5Prefab;
     [SerializeField] private EnemySpawner ES;
     [SerializeField] private ObjectDetector OD;
     [SerializeField] private PlayerGold playerGold;
@@ -17,6 +12,12 @@ public class UnitSpawner : MonoBehaviour
 
 
     public int Num;
+
+    public UnitWeapon[] unit1Prefab;
+    public UnitWeapon[] unit2Prefab;
+    public UnitWeapon[] unit3Prefab;
+    public UnitWeapon[] unit4Prefab;
+    public UnitWeapon[] unit5Prefab;
 
     public List<UnitWeapon> unit1;
     public List<UnitWeapon> unit2;
@@ -132,12 +133,15 @@ public class UnitSpawner : MonoBehaviour
             {
                 unit1.Remove(OD.unitWeapon);
                 hidden.Hidden1();
+                hidden.Hidden2();
                 playerGold.CurrentGold += 50;
             }
             else if (OD.unitWeapon.unitValue == UnitValue.Value2)
             {
                 unit2.Remove(OD.unitWeapon);
                 hidden.Hidden3();
+                hidden.Hidden4();
+                hidden.Hidden5();
                 playerGold.CurrentGold += 50;
             }
             else if (OD.unitWeapon.unitValue == UnitValue.Value3)
@@ -148,6 +152,9 @@ public class UnitSpawner : MonoBehaviour
             else if (OD.unitWeapon.unitValue == UnitValue.Value4)
             {
                 unit4.Remove(OD.unitWeapon);
+                hidden.Hidden6();
+                hidden.Hidden7();
+                hidden.Hidden8();
                 playerGold.CurrentGold += 50;
             }
             else if (OD.unitWeapon.unitValue == UnitValue.Value5)

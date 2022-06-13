@@ -36,7 +36,6 @@ public class UnitWeapon : MonoBehaviour
     [SerializeField] protected Transform spawnPoint;
     [SerializeField] protected float attackRate = 0.5f;
     [SerializeField] protected float attackRange = 2.0f;
-    [SerializeField] protected float power = 60f;
     [SerializeField] private int level = 0;
     [SerializeField] protected Transform Target = null;
 
@@ -47,12 +46,14 @@ public class UnitWeapon : MonoBehaviour
     private EnemySpawner ES;
     public Tile currentTile = null;
 
+    public float power = 60f;
     public float Damage => power;
     public float Rate => attackRate;
     public float Range => attackRange;
     public int Level => level + 1;
     public Sprite imageUnit => SR.sprite;
     public Color color => SR.color;
+    
 
 
     private void Awake()

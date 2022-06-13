@@ -10,7 +10,7 @@ public class WaveManager : MonoBehaviour
     private int currentWaveIndex = -1;
     private int wave = 1;
 
-    private float maxTime = 1f;
+    private float maxTime = 20f;
     public float currentTime = 0f;
 
     public int CurrentWave => currentWaveIndex + 1;

@@ -24,13 +24,16 @@ public class UnitSpawner : MonoBehaviour
     public List<UnitWeapon> unit3;
     public List<UnitWeapon> unit4;
     public List<UnitWeapon> unit5;
+
+
+    public List<UnitWeapon> drawUnit;
     
 
     private Vector3 Pos;
     private Color ReColor = new Color(0.84f, 0.84f, 0.84f);
 
     public bool merge = false;
-
+    public bool isdraw = false;
 
     public void SpawnUnit(Transform tileTransform)
     {
@@ -44,12 +47,39 @@ public class UnitSpawner : MonoBehaviour
 
         playerGold.CurrentGold -= unitBuildGold;
         Pos = tileTransform.position - new Vector3(0, 0, 2f);
-        int a = Random.Range(0, unit1Prefab.Length);
-        UnitWeapon clone = Instantiate(unit1Prefab[a], Pos, Quaternion.identity);
-        clone.GetComponent<UnitWeapon>().Setup(ES);
-        clone.GetComponent<UnitWeapon>().currentTile = tile;
-        unit1.Add(clone);
-        tile.SR.color = new Color(1f, 0.72f, 0.73f);
+
+        if (isdraw)
+        {
+            UnitWeapon clone = Instantiate(drawUnit[0], Pos, Quaternion.identity);
+            clone.GetComponent<UnitWeapon>().Setup(ES);
+            clone.GetComponent<UnitWeapon>().currentTile = tile;
+            if (drawUnit[0].GetComponent<UnitWeapon>().unitValue == UnitValue.Value3)
+            {
+                unit3.Add(clone);
+                tile.SR.color = new Color(0.72f, 1f, 0.72f);
+            }
+            else if(drawUnit[0].GetComponent<UnitWeapon>().unitValue == UnitValue.Value4)
+            {
+                unit4.Add(clone);
+                tile.SR.color = new Color(0.72f, 0.8f, 1f);
+            }
+            else if (drawUnit[0].GetComponent<UnitWeapon>().unitValue == UnitValue.Value5)
+            {
+                unit5.Add(clone);
+                tile.SR.color = new Color(0.88f, 0.72f, 1f);
+            }
+            drawUnit.Remove(drawUnit[0]);
+            if (drawUnit.Count == 0) isdraw = false;
+        }
+        else if(!isdraw)
+        {
+            int a = Random.Range(0, unit1Prefab.Length);
+            UnitWeapon clone = Instantiate(unit1Prefab[a], Pos, Quaternion.identity);
+            clone.GetComponent<UnitWeapon>().Setup(ES);
+            clone.GetComponent<UnitWeapon>().currentTile = tile;
+            unit1.Add(clone);
+            tile.SR.color = new Color(1f, 0.72f, 0.73f);
+        }
     }
     public void SpawnUnit2(Transform tileTransform)
     {

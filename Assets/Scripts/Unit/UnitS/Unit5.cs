@@ -30,6 +30,6 @@ public class Unit5 : UnitWeapon
     {
         GameObject clone = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
         clone.transform.rotation = transform.rotation;
-        clone.GetComponent<Splash>().Setup(Target, power);
+        clone.GetComponent<Splash>().Setup(Target, power + upGrade);
     }
 }

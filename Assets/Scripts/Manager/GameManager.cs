@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private PlayerHP playerHp;
     [SerializeField] private TimeManager TM;
-
     private void Update()
     {
         if(playerHp.CurrentHP <= 0)

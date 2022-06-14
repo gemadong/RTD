@@ -35,7 +35,7 @@ public class Unit7 : UnitWeapon
             GameObject clone1 = Instantiate(Claw, spawnPoint.position, Quaternion.identity);
             GameObject clone2 = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
             clone1.transform.rotation = transform.rotation;
-            clone2.GetComponent<MagicClaw>().Setup(Target, power, clone1);
+            clone2.GetComponent<MagicClaw>().Setup(Target, power + upGrade, clone1);
         }
         
     }

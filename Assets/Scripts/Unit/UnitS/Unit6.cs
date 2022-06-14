@@ -7,7 +7,7 @@ public class Unit6 : UnitWeapon
     protected override void SpawnBullet()
     {
         GameObject clone = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-        clone.GetComponent<CannonBullet>().Setup(Target, power);
+        clone.GetComponent<CannonBullet>().Setup(Target, power + upGrade);
     }
 
 }

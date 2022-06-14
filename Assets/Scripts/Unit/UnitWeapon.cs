@@ -37,6 +37,7 @@ public class UnitWeapon : MonoBehaviour
     [SerializeField] protected float attackRate = 0.5f;
     [SerializeField] protected float attackRange = 2.0f;
     [SerializeField] private int level = 0;
+    [SerializeField] protected float power = 60f;
     [SerializeField] protected Transform Target = null;
 
     public UnitType unitType;
@@ -46,8 +47,8 @@ public class UnitWeapon : MonoBehaviour
     private EnemySpawner ES;
     public Tile currentTile = null;
 
-    public float power = 60f;
-    public float Damage => power;
+    public float upGrade=0;
+    public float Damage => power+upGrade;
     public float Rate => attackRate;
     public float Range => attackRange;
     public int Level => level + 1;
@@ -133,12 +134,17 @@ public class UnitWeapon : MonoBehaviour
     protected virtual void SpawnBullet()
     {
         GameObject clone = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-        clone.GetComponent<Bullet>().Setup(Target, power);
+        clone.GetComponent<Bullet>().Setup(Target, power+upGrade);
     }
 
     public void DestroyUnit()
     {
         Destroy(gameObject);
+    }
+
+    public void PowerUP(float f)
+    {
+        upGrade += f;
     }
 
 }

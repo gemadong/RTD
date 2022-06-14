@@ -21,7 +21,7 @@ public class TextViewer : MonoBehaviour
     {
         playerHPText.text = "Life       " + playerHP.CurrentHP + "/" + playerHP.MaxHP;
         playerGoldText.text = "Gold           " + playerGold.CurrentGold.ToString();
-        playerGasText.text = "Gas             " + playerGold.CurrentGas.ToString();
+        playerGasText.text = "Gas : " + playerGold.CurrentGas.ToString();
         waveText.text = "Round  " + wave.CurrentWave + "/" + wave.Maxwave;
         enemyCountText.text = "Enemy       " + ES.CurrentEnemyCount + "/" + ES.MaxEnemyCount;
     }

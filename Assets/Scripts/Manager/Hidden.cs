@@ -9,6 +9,7 @@ public class Hidden : MonoBehaviour
     [SerializeField] private PlayerGold PG;
     [SerializeField] private PlayerHP PH;
     [SerializeField] private Mission mission;
+    [SerializeField] private Draw draw;
     [SerializeField] private UpGrade upGrade;
     [SerializeField] private GameObject panel;
     [SerializeField] private Text hidden1;
@@ -440,6 +441,7 @@ public class Hidden : MonoBehaviour
         {
             if (mission.ispanel == true) mission.IsPanel();
             if (upGrade.ispanel == true) upGrade.IsPanel();
+            if (draw.ispanel == true) draw.IsPanel();
             panel.SetActive(true);
             ispanel = true;
         }

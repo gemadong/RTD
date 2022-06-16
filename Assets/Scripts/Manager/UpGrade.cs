@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UpGrade : MonoBehaviour
 {
+    [SerializeField] private Setting setting;
     [SerializeField] private Mission mission;
     [SerializeField] private Draw draw;
     [SerializeField] private Hidden hidden;
@@ -189,7 +190,7 @@ public class UpGrade : MonoBehaviour
         if(PG.CurrentGold >= 100)
         {
             PG.CurrentGold -= 100;
-            PG.CurrentGas += Random.Range(20, 110);
+            PG.CurrentGas += Random.Range(2, 11)*10;
         }
     }
 
@@ -200,6 +201,7 @@ public class UpGrade : MonoBehaviour
             if (mission.ispanel == true) mission.IsPanel();
             if (hidden.ispanel == true) hidden.IsPanel();
             if (draw.ispanel == true) draw.IsPanel();
+            if (setting.ispanel == true) setting.IsPanel();
             panel.SetActive(true);
             ispanel = true;
         }

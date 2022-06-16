@@ -22,8 +22,9 @@ public class HPbarPos : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        Vector3 screenPos = Camera.main.WorldToScreenPoint(targetTransform.position);
-        rect.position = screenPos + distance;
+        //Vector3 screenPos = Camera.main.WorldToScreenPoint(targetTransform.position);
+        //rect.position = screenPos + distance;
+        rect.position = targetTransform.position + distance;
 
     }
 

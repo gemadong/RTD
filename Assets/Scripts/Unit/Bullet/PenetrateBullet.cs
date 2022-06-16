@@ -32,6 +32,8 @@ public class PenetrateBullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Ground")) Destroy(gameObject);
+
         if (other.CompareTag("Enemy"))
         {
             other.GetComponent<Enemy>().DMG(power);

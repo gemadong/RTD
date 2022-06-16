@@ -11,27 +11,24 @@ public class UnitDataViewer : MonoBehaviour
     [SerializeField] private Text Rangetext;
     [SerializeField] private Text Leveltext;
 
+    [SerializeField] private AttackRange AR;
+
     private UnitWeapon currentUnit;
 
     private void Awake()
     {
         OffPane1();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            OffPane1();
-        }
-    }
     public void OnPane1(Transform unitWeapon)
     {
         currentUnit = unitWeapon.GetComponent<UnitWeapon>();
         gameObject.SetActive(true);
         UpdateUnitDate();
+        AR.OnAttackRange(currentUnit.transform.position, currentUnit.Range);
     }
     public void OffPane1()
     {
+        AR.OffAttackRange();
         gameObject.SetActive(false);
     }
     private void UpdateUnitDate()

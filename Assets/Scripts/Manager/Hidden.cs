@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Hidden : MonoBehaviour
 {
+    [SerializeField] private Setting setting;
     [SerializeField] private UnitSpawner US;
     [SerializeField] private PlayerGold PG;
     [SerializeField] private PlayerHP PH;
@@ -442,6 +443,7 @@ public class Hidden : MonoBehaviour
             if (mission.ispanel == true) mission.IsPanel();
             if (upGrade.ispanel == true) upGrade.IsPanel();
             if (draw.ispanel == true) draw.IsPanel();
+            if (setting.ispanel == true) setting.IsPanel();
             panel.SetActive(true);
             ispanel = true;
         }

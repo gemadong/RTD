@@ -192,12 +192,12 @@ public class UnitSpawner : MonoBehaviour
                 unit5.Remove(OD.unitWeapon);
                 playerGold.CurrentGold += 50;
             }
-
             OD.unitWeapon.currentTile.SR.color = OD.unitWeapon.currentTile.reColor;
             OD.unitWeapon.currentTile.IsCheck = false;
             OD.unitWeapon.currentTile.IsBuildUnit = false;
             OD.unitWeapon.DestroyUnit();
             OD.IsCheckBlind = false;
+            OD.NoCheck();
         }
     }
 }

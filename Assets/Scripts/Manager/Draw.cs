@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Draw : MonoBehaviour
 {
+    [SerializeField] private Setting setting;
     [SerializeField] private PlayerGold PG;
     [SerializeField] private UnitSpawner US;
     [SerializeField] private UpGrade upGrade;
@@ -85,6 +86,7 @@ public class Draw : MonoBehaviour
             if (mission.ispanel == true) mission.IsPanel();
             if (hidden.ispanel == true) hidden.IsPanel();
             if (upGrade.ispanel == true) upGrade.IsPanel();
+            if (setting.ispanel == true) setting.IsPanel();
             panel.SetActive(true);
             ispanel = true;
         }

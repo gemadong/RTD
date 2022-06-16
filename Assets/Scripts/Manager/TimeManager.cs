@@ -25,7 +25,7 @@ public class TimeManager : MonoBehaviour
             else if(isSpeed == 2)
             {
                 isSpeed = 3;
-                Time.timeScale = 3f;
+                Time.timeScale = 20f;
                 quickness.text = "x3";
             }
             else

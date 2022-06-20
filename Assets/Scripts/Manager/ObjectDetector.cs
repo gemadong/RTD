@@ -30,6 +30,7 @@ public class ObjectDetector : MonoBehaviour
         if (mission.ispanel == true|| hidden.ispanel == true || upGrade.ispanel == true || draw.ispanel ==true || setting.ispanel == true) Iswindow = true;
         else if (mission.ispanel == false&& hidden.ispanel == false&& upGrade.ispanel == false && draw.ispanel == false && setting.ispanel == false) Iswindow = false;
         if (Iswindow && IsCheckBlind) NoCheck();
+
         if (Input.GetMouseButtonDown(0))
         {
             ray = camera.ScreenPointToRay(Input.mousePosition);

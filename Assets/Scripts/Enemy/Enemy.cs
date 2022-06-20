@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     private EnemySpawner ES;
 
     public float maxHP;
-    protected float currentHP;
+    public float currentHP;
     protected bool isDie = false;
 
     public float MaxHP => maxHP;
@@ -26,6 +26,10 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         currentHP = maxHP;
+    }
+
+    private void Update()
+    {
     }
 
     public void Setup(EnemySpawner ES, Transform[] waypoints)
@@ -88,6 +92,7 @@ public class Enemy : MonoBehaviour
     {
         ES.DestroyEnemy(type,this);
     }
+
     protected virtual void Die()
     {
         if (currentHP <= 0)

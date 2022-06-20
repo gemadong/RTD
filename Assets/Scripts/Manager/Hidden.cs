@@ -229,6 +229,7 @@ public class Hidden : MonoBehaviour
             if (hiddenObj3.Count == 8)
             {
                 PG.CurrentGold += 300;
+                PG.CurrentGas += 100;
                 HiddenClear(hidden3);
                 hiddenObj3.Clear();
                 hiddenClear3 = true;
@@ -244,7 +245,7 @@ public class Hidden : MonoBehaviour
             hiddenObj4.Clear();
             for (int i = 0; i < US.unit2.Count; i++)
             {
-                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type1)
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type5)
                 {
                     hiddenObj4.Add(US.unit2[i]);
                     break;
@@ -252,7 +253,7 @@ public class Hidden : MonoBehaviour
             }
             for (int i = 0; i < US.unit2.Count; i++)
             {
-                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type2)
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type6)
                 {
                     hiddenObj4.Add(US.unit2[i]);
                     break;
@@ -277,16 +278,17 @@ public class Hidden : MonoBehaviour
             hiddenObj5.Clear();
             for (int i = 0; i < US.unit2.Count; i++)
             {
-                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type1)
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type7)
                 {
                     hiddenObj5.Add(US.unit2[i]);
                 }
             }
 
-            hidden5.text = hiddenObj5.Count.ToString() + " / 2";
+            hidden5.text = hiddenObj5.Count.ToString() + " / 7";
 
             if (hiddenObj5.Count == 7)
             {
+                draw.draw += 2;
                 HiddenClear(hidden5);
                 hiddenObj5.Clear();
                 hiddenClear5 = true;
@@ -383,6 +385,7 @@ public class Hidden : MonoBehaviour
                 hidden7.text = hiddenObj7.Count.ToString() + " / 7";
                 if (hiddenObj7.Count == 7)
                 {
+                    draw.draw += 3;
                     HiddenClear(hidden7);
                     hiddenObj7.Clear();
                     hiddenClear7 = true;

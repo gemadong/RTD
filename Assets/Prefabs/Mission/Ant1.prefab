@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5564cdca544b84a9d95c4baa4dbebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 150
+  maxHP: 500
   price: 100
 --- !u!114 &6097393911216189204
 MonoBehaviour:

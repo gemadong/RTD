@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Transform canvas;
     [SerializeField] private PlayerHP playerHP;
     [SerializeField] private Mission mission;
+    [SerializeField] private WaveManager WM;
 
 
     private Wave currentWave;
@@ -44,9 +45,11 @@ public class EnemySpawner : MonoBehaviour
 
         while (spawnEnemyCount < currentWave.maxEnemyCount)
         {
+            float hpUp = WM.wave * 400;
             GameObject clone = Instantiate(currentWave.enemyPrefab);
             Enemy enemy = clone.GetComponent<Enemy>();
-
+            enemy.maxHP *= WM.wave+1;
+            enemy.currentHP = enemy.maxHP;
             enemy.Setup(this,wayPoints);
             enemyList.Add(enemy);
 
@@ -76,6 +79,7 @@ public class EnemySpawner : MonoBehaviour
         spawnEnemyHP(clone);
 
         currentEnemyCount++;
+
 
     }
 

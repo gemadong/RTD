@@ -9,7 +9,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private GameManager GM;
     [SerializeField] private PlayerGold PG;
     private int currentWaveIndex = -1;
-    private int wave = 1;
+    public int wave = 1;
 
     public float maxTime = 20f;
     public float currentTime = 0f;
@@ -17,9 +17,11 @@ public class WaveManager : MonoBehaviour
     public int CurrentWave => currentWaveIndex + 1;
     public int Maxwave => waves.Length;
 
+    public bool waitingTime = false;
+
     private void Update()
     {
-        if (ES.EnemyList.Count == 0)
+        if (ES.EnemyList.Count == 0||waitingTime)
         {
             if (wave == Maxwave+1) GM.GameClear();
 
@@ -28,10 +30,12 @@ public class WaveManager : MonoBehaviour
                 PG.CurrentGold += 500;
                 wave++;
             }
+            waitingTime = true;
             currentTime += Time.deltaTime;
 
             if (currentTime > maxTime)
             {
+                waitingTime = false;
                 StartWave();
                 currentTime = 0;
             }

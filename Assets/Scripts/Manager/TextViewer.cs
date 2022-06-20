@@ -16,6 +16,7 @@ public class TextViewer : UIBase
     [SerializeField] private Text waveText;
     [SerializeField] private Text killText;
     [SerializeField] private Text timeText;
+    
 
 
     private void Update()

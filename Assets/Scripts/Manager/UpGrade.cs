@@ -13,8 +13,10 @@ public class UpGrade : MonoBehaviour
     [SerializeField] private UnitSpawner US;
     [SerializeField] private PlayerGold PG;
     [SerializeField] private Text[] CostText;
+    [SerializeField] private Text plusGas;
 
     public bool ispanel = false;
+    public bool isText = false;
 
     public int cost1 = 10;
     public int cost2 = 10;
@@ -24,6 +26,10 @@ public class UpGrade : MonoBehaviour
     public int cost6 = 10;
     public int cost7 = 10;
     public int cost8 = 10;
+    public int randomGas = 0;
+
+    float colora = 0;
+    Color recolor;
 
     private void Start()
     {
@@ -43,6 +49,9 @@ public class UpGrade : MonoBehaviour
         cost6 = 10;
         cost7 = 10;
         cost8 = 10;
+        randomGas = 0;
+        recolor = plusGas.color;
+        
     }
     private void Update()
     {
@@ -54,6 +63,20 @@ public class UpGrade : MonoBehaviour
         CostText[5].text = "Gas : " + cost6;
         CostText[6].text = "Gas : " + cost7;
         CostText[7].text = "Gas : " + cost8;
+
+        if (isText)
+        {
+            colora -= Time.deltaTime;
+            plusGas.text = "+" + randomGas.ToString();
+            recolor.a = colora;
+            plusGas.color = recolor;
+            if (recolor.a <= 0)
+            {
+                plusGas.gameObject.SetActive(false);
+                isText = false;
+            }
+        }
+
     }
     public void unitUpGrade1()
     {
@@ -146,6 +169,7 @@ public class UpGrade : MonoBehaviour
         US.unit4Prefab[i].GetComponent<UnitWeapon>().PowerUP(j);
         US.unit5Prefab[i].GetComponent<UnitWeapon>().PowerUP(j);
     }
+
     public void InunitUpHrade(float power, UnitType unitType)
     {
         for (int i = 0; i < US.unit1.Count; i++)
@@ -187,10 +211,15 @@ public class UpGrade : MonoBehaviour
 
     public void RandomGas()
     {
-        if(PG.CurrentGold >= 100)
+        if (PG.CurrentGold >= 100)
         {
             PG.CurrentGold -= 100;
-            PG.CurrentGas += Random.Range(2, 11)*10;
+            randomGas = Random.Range(2, 11) * 10;
+            PG.CurrentGas += randomGas;
+            colora = 1f;
+            isText = true;
+            plusGas.gameObject.SetActive(true);
+
         }
     }
 

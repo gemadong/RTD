@@ -17,5 +17,6 @@ public class Movement : MonoBehaviour
     public void MoveTo(Vector3 direction)
     {
         moveDirection = direction;
+        
     }
 }

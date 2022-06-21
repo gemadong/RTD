@@ -155,6 +155,7 @@ public class ObjectDetector : MonoBehaviour
             hidden.Hidden6();
             hidden.Hidden7();
             hidden.Hidden8();
+            hidden.Hidden10();
 
         }
     }

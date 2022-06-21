@@ -185,6 +185,7 @@ public class UnitSpawner : MonoBehaviour
                 hidden.Hidden6();
                 hidden.Hidden7();
                 hidden.Hidden8();
+                hidden.Hidden10();
                 playerGold.CurrentGold += 400;
             }
             else if (OD.unitWeapon.unitValue == UnitValue.Value5)

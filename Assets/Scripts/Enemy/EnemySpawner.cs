@@ -82,10 +82,15 @@ public class EnemySpawner : MonoBehaviour
 
 
     }
-
-    public void DestroyEnemy(DestroyType type, Enemy enemy)
+   
+    public void DestroyEnemy(DestroyType type, Enemy enemy, EnemyType enemytype)
     {
-        if (type == DestroyType.Arrice) playerHP.DMG(1f);
+        if (type == DestroyType.Arrice)
+        {
+            if (enemytype == EnemyType.Enemy) playerHP.DMG(1f);
+            if (enemytype == EnemyType.Ant) playerHP.DMG(10f);
+            if (enemytype == EnemyType.Boss) playerHP.DMG(playerHP.CurrentHP);
+        }
 
         if (type == DestroyType.Kill) killCount += 1;
 

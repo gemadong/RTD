@@ -7,6 +7,13 @@ public enum DestroyType
     Kill,
     Arrice
 }
+public enum EnemyType
+{
+    Enemy,
+    Ant,
+    Boss
+}
+
 
 public class Enemy : MonoBehaviour
 {
@@ -15,6 +22,8 @@ public class Enemy : MonoBehaviour
     private int currentIndex = 0;
     private Movement movement;
     private EnemySpawner ES;
+    
+    public EnemyType enemyType;
 
     public float maxHP;
     public float currentHP;
@@ -71,7 +80,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            OnDie(DestroyType.Arrice);
+            OnDie(DestroyType.Arrice,enemyType);
         }
     }
      
@@ -85,9 +94,9 @@ public class Enemy : MonoBehaviour
         Die();
     }
 
-    public void OnDie(DestroyType type)
+    public void OnDie(DestroyType type,EnemyType Etype)
     {
-        ES.DestroyEnemy(type,this);
+        ES.DestroyEnemy(type,this,Etype);
     }
 
     protected virtual void Die()
@@ -95,7 +104,7 @@ public class Enemy : MonoBehaviour
         if (currentHP <= 0)
         {
             isDie = true;
-            OnDie(DestroyType.Kill);
+            OnDie(DestroyType.Kill, enemyType);
         }
     }
 

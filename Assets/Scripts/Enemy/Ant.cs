@@ -37,7 +37,7 @@ public class Ant : Enemy
             }
             PG.CurrentGold += price;
             isDie = true;
-            OnDie(DestroyType.Kill);
+            OnDie(DestroyType.Kill,enemyType);
         }
     }
 

@@ -28,9 +28,6 @@ public class Enemy : MonoBehaviour
         currentHP = maxHP;
     }
 
-    private void Update()
-    {
-    }
 
     public void Setup(EnemySpawner ES, Transform[] waypoints)
     {

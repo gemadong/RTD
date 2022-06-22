@@ -18,8 +18,4 @@ public class PlayerHP : MonoBehaviour
     {
         currentHP -= dmg;
     }
-
-
-
-
 }

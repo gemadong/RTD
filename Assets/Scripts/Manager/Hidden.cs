@@ -23,6 +23,18 @@ public class Hidden : MonoBehaviour
     [SerializeField] private Text hidden8;
     [SerializeField] private Text hidden9;
     [SerializeField] private Text hidden10;
+    [SerializeField] private Text hidden11;
+    [SerializeField] private Text hidden12;
+    [SerializeField] private Text hidden13;
+    [SerializeField] private Text hidden14;
+    [SerializeField] private Text hidden15;
+    [SerializeField] private Text hidden16;
+    [SerializeField] private Text hidden17;
+    [SerializeField] private Text hidden18;
+    [SerializeField] private Text hidden19;
+    [SerializeField] private Text hidden20;
+    [SerializeField] private Text hidden21;
+    [SerializeField] private Text hidden22;
 
     public List<UnitWeapon> hiddenObj1;
     public List<UnitWeapon> hiddenObj2;
@@ -32,6 +44,17 @@ public class Hidden : MonoBehaviour
     public List<UnitWeapon> hiddenObj7;
     public List<UnitWeapon> hiddenObj8;
     public List<UnitWeapon> hiddenObj10;
+    public List<UnitWeapon> hiddenObj11;
+    public List<UnitWeapon> hiddenObj12;
+    public List<UnitWeapon> hiddenObj13;
+    public List<UnitWeapon> hiddenObj14;
+    public List<UnitWeapon> hiddenObj15;
+    public List<UnitWeapon> hiddenObj16;
+    public List<UnitWeapon> hiddenObj17;
+    public List<UnitWeapon> hiddenObj19;
+    public List<UnitWeapon> hiddenObj20;
+    public List<UnitWeapon> hiddenObj21;
+    public List<UnitWeapon> hiddenObj22;
 
     public bool ispanel = false;
     bool hiddenClear1 = false;
@@ -44,12 +67,49 @@ public class Hidden : MonoBehaviour
     bool hiddenClear8 = false;
     bool hiddenClear9 = false;
     bool hiddenClear10 = false;
+    bool hiddenClear11 = false;
+    bool hiddenClear12 = false;
+    bool hiddenClear13 = false;
+    bool hiddenClear14 = false;
+    bool hiddenClear15 = false;
+    bool hiddenClear16 = false;
+    bool hiddenClear17 = false;
+    bool hiddenClear18 = false;
+    bool hiddenClear19 = false;
+    bool hiddenClear20 = false;
+    bool hiddenClear21 = false;
+    bool hiddenClear22 = false;
 
     private void Update()
     {
         Hidden9();
+        Hidden18();
     }
 
+    private void Start()
+    {
+        Hidden1();
+        Hidden2();
+        Hidden3();
+        Hidden4();
+        Hidden5();
+        Hidden6();
+        Hidden7();
+        Hidden8();
+        Hidden9();
+        Hidden10();
+        Hidden11();
+        Hidden12();
+        Hidden13();
+        Hidden14();
+        Hidden15();
+        Hidden16();
+        Hidden17();
+        Hidden19();
+        Hidden20();
+        Hidden21();
+        Hidden22();
+    }
 
     public void Hidden1()
     {
@@ -404,7 +464,7 @@ public class Hidden : MonoBehaviour
             hiddenObj8.Clear();
             for (int i = 0; i < US.unit4.Count; i++)
             {
-                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type1)
+                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type2)
                 {
                     hiddenObj8.Add(US.unit4[i]);
                 }
@@ -508,6 +568,704 @@ public class Hidden : MonoBehaviour
             }
         }
 
+    }
+
+    public void Hidden11()
+    {
+        if (!hiddenClear11)
+        {
+            hiddenObj11.Clear();
+            for (int i = 0; i < US.unit1.Count; i++)
+            {
+                if (US.unit1[i].GetComponent<UnitWeapon>().unitType == UnitType.Type3)
+                {
+                    hiddenObj11.Add(US.unit1[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit1.Count; i++)
+            {
+                if (US.unit1[i].GetComponent<UnitWeapon>().unitType == UnitType.Type5)
+                {
+                    hiddenObj11.Add(US.unit1[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit2.Count; i++)
+            {
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type3)
+                {
+                    hiddenObj11.Add(US.unit2[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit2.Count; i++)
+            {
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type8)
+                {
+                    hiddenObj11.Add(US.unit2[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type3)
+                {
+                    hiddenObj11.Add(US.unit3[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type5)
+                {
+                    hiddenObj11.Add(US.unit3[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit4.Count; i++)
+            {
+                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type3)
+                {
+                    hiddenObj11.Add(US.unit4[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit4.Count; i++)
+            {
+                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type4)
+                {
+                    hiddenObj11.Add(US.unit4[i]);
+                    break;
+                }
+            }
+
+            hidden11.text = hiddenObj11.Count.ToString() + " / 8";
+            if (hiddenObj11.Count == 8)
+            {
+                draw.unique += 1;
+                HiddenClear(hidden11);
+                hiddenObj11.Clear();
+                hiddenClear11 = true;
+            }
+        }
+    }
+
+    public void Hidden12()
+    {
+        if (!hiddenClear12)
+        {
+            hiddenObj12.Clear();
+            for (int i = 0; i < US.unit1.Count; i++)
+            {
+                if (US.unit1[i].GetComponent<UnitWeapon>().unitType == UnitType.Type5)
+                {
+                    hiddenObj12.Add(US.unit1[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit1.Count; i++)
+            {
+                if (US.unit1[i].GetComponent<UnitWeapon>().unitType == UnitType.Type7)
+                {
+                    hiddenObj12.Add(US.unit1[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit2.Count; i++)
+            {
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type3)
+                {
+                    hiddenObj12.Add(US.unit2[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit2.Count; i++)
+            {
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type5)
+                {
+                    hiddenObj12.Add(US.unit2[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type2)
+                {
+                    hiddenObj12.Add(US.unit3[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type5)
+                {
+                    hiddenObj12.Add(US.unit3[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit4.Count; i++)
+            {
+                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type3)
+                {
+                    hiddenObj12.Add(US.unit4[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit4.Count; i++)
+            {
+                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type8)
+                {
+                    hiddenObj12.Add(US.unit4[i]);
+                    break;
+                }
+            }
+
+            hidden12.text = hiddenObj12.Count.ToString() + " / 8";
+            if (hiddenObj12.Count == 8)
+            {
+                draw.unique += 1;
+                HiddenClear(hidden12);
+                hiddenObj12.Clear();
+                hiddenClear12 = true;
+            }
+        }
+    }
+
+    public void Hidden13()
+    {
+        if (!hiddenClear13)
+        {
+            hiddenObj13.Clear();
+            for (int i = 0; i < US.unit1.Count; i++)
+            {
+                if (US.unit1[i].GetComponent<UnitWeapon>().unitType == UnitType.Type3)
+                {
+                    hiddenObj13.Add(US.unit1[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit1.Count; i++)
+            {
+                if (US.unit1[i].GetComponent<UnitWeapon>().unitType == UnitType.Type6)
+                {
+                    hiddenObj13.Add(US.unit1[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit1.Count; i++)
+            {
+                if (US.unit1[i].GetComponent<UnitWeapon>().unitType == UnitType.Type8)
+                {
+                    hiddenObj13.Add(US.unit1[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit2.Count; i++)
+            {
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type7)
+                {
+                    hiddenObj13.Add(US.unit2[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type3)
+                {
+                    hiddenObj13.Add(US.unit3[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type4)
+                {
+                    hiddenObj13.Add(US.unit3[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type7)
+                {
+                    hiddenObj13.Add(US.unit3[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit4.Count; i++)
+            {
+                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type3)
+                {
+                    hiddenObj13.Add(US.unit4[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit4.Count; i++)
+            {
+                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type4)
+                {
+                    hiddenObj13.Add(US.unit4[i]);
+                    break;
+                }
+            }
+
+            hidden13.text = hiddenObj13.Count.ToString() + " / 9";
+            if (hiddenObj13.Count == 9)
+            {
+                draw.draw += 2;
+                HiddenClear(hidden13);
+                hiddenObj13.Clear();
+                hiddenClear13 = true;
+            }
+        }
+    }
+
+    public void Hidden14()
+    {
+        if (!hiddenClear14)
+        {
+            hiddenObj14.Clear();
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            int d = 0;
+
+            for (int i = 0; i < US.unit2.Count; i++)
+            {
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type5)
+                {
+                    hiddenObj14.Add(US.unit2[i]);
+
+                    a++;
+                    if(a==3) break;
+                }
+            }
+            for (int i = 0; i < US.unit2.Count; i++)
+            {
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type6)
+                {
+                    hiddenObj14.Add(US.unit2[i]);
+                    b++;
+                    if (b == 3) break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type1)
+                {
+                    hiddenObj14.Add(US.unit3[i]);
+                    c++;
+                    if (c == 3) break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type7)
+                {
+                    hiddenObj14.Add(US.unit3[i]);
+                    d++;
+                    if (d == 3) break;
+                }
+            }
+            hidden14.text = hiddenObj14.Count.ToString() + " / 12";
+            if (hiddenObj14.Count == 12)
+            {
+                draw.rare += 2;
+                HiddenClear(hidden14);
+                hiddenObj14.Clear();
+                hiddenClear14 = true;
+            }
+        }
+    }
+
+    public void Hidden15()
+    {
+        if (!hiddenClear15)
+        {
+            hiddenObj15.Clear();
+            for (int i = 0; i < US.unit1.Count; i++)
+            {
+                if (US.unit1[i].GetComponent<UnitWeapon>().unitType == UnitType.Type5)
+                {
+                    hiddenObj15.Add(US.unit1[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit1.Count; i++)
+            {
+                if (US.unit1[i].GetComponent<UnitWeapon>().unitType == UnitType.Type6)
+                {
+                    hiddenObj15.Add(US.unit1[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit2.Count; i++)
+            {
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type3)
+                {
+                    hiddenObj15.Add(US.unit2[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type4)
+                {
+                    hiddenObj15.Add(US.unit3[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type6)
+                {
+                    hiddenObj15.Add(US.unit3[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit4.Count; i++)
+            {
+                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type1)
+                {
+                    hiddenObj15.Add(US.unit4[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit4.Count; i++)
+            {
+                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type5)
+                {
+                    hiddenObj15.Add(US.unit4[i]);
+                    break;
+                }
+            }
+
+            hidden15.text = hiddenObj15.Count.ToString() + " / 7";
+            if (hiddenObj15.Count == 7)
+            {
+                draw.draw += 1;
+                HiddenClear(hidden15);
+                hiddenObj15.Clear();
+                hiddenClear15 = true;
+            }
+        }
+    }
+
+    public void Hidden16()
+    {
+        if (!hiddenClear16)
+        {
+            hiddenObj16.Clear();
+            int a = 0;
+            int b = 0;
+            int c = 0;
+
+            for (int i = 0; i < US.unit4.Count; i++)
+            {
+                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type8)
+                {
+                    hiddenObj16.Add(US.unit4[i]);
+
+                    a++;
+                    if (a == 3) break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type1)
+                {
+                    hiddenObj16.Add(US.unit3[i]);
+                    c++;
+                    if (c == 3) break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type4)
+                {
+                    hiddenObj16.Add(US.unit3[i]);
+                    b++;
+                    if (b == 3) break;
+                }
+            }
+            hidden16.text = hiddenObj16.Count.ToString() + " / 9";
+            if (hiddenObj16.Count == 9)
+            {
+                draw.epic += 1;
+                HiddenClear(hidden16);
+                hiddenObj16.Clear();
+                hiddenClear16 = true;
+            }
+        }
+    }
+
+    public void Hidden17()
+    {
+        if (!hiddenClear17)
+        {
+            hiddenObj17.Clear();
+            for (int i = 0; i < US.unit5.Count; i++)
+            {
+                if (US.unit5[i].GetComponent<UnitWeapon>().unitType == UnitType.Type2)
+                {
+                    hiddenObj17.Add(US.unit5[i]);
+                }
+            }
+            hidden17.text = hiddenObj17.Count.ToString() + " / 3";
+            if (hiddenObj17.Count == 3)
+            {
+                draw.unique += 2;
+                HiddenClear(hidden17);
+                hiddenObj17.Clear();
+                hiddenClear17 = true;
+            }
+
+        }
+    }
+
+    public void Hidden18()
+    {
+        if (!hiddenClear18)
+        {
+            hidden18.text = draw.draw + " / 5";
+            if (draw.draw >= 5)
+            {
+                draw.unique += 1;
+                HiddenClear(hidden18);
+                hiddenClear18 = true;
+            }
+
+        }
+    }
+
+    public void Hidden19()
+    {
+        if (!hiddenClear19)
+        {
+            hiddenObj19.Clear();
+            for (int i = 0; i < US.unit1.Count; i++)
+            {
+                if (US.unit1[i].GetComponent<UnitWeapon>().unitType == UnitType.Type7)
+                {
+                    hiddenObj19.Add(US.unit1[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit1.Count; i++)
+            {
+                if (US.unit1[i].GetComponent<UnitWeapon>().unitType == UnitType.Type8)
+                {
+                    hiddenObj19.Add(US.unit1[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit2.Count; i++)
+            {
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type3)
+                {
+                    hiddenObj19.Add(US.unit2[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit2.Count; i++)
+            {
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type5)
+                {
+                    hiddenObj19.Add(US.unit2[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit2.Count; i++)
+            {
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type7)
+                {
+                    hiddenObj19.Add(US.unit2[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type1)
+                {
+                    hiddenObj19.Add(US.unit3[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type2)
+                {
+                    hiddenObj19.Add(US.unit3[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type3)
+                {
+                    hiddenObj19.Add(US.unit3[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit4.Count; i++)
+            {
+                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type5)
+                {
+                    hiddenObj19.Add(US.unit4[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit4.Count; i++)
+            {
+                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type6)
+                {
+                    hiddenObj19.Add(US.unit4[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit4.Count; i++)
+            {
+                if (US.unit4[i].GetComponent<UnitWeapon>().unitType == UnitType.Type8)
+                {
+                    hiddenObj19.Add(US.unit4[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit5.Count; i++)
+            {
+                if (US.unit5[i].GetComponent<UnitWeapon>().unitType == UnitType.Type5)
+                {
+                    hiddenObj19.Add(US.unit5[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < US.unit5.Count; i++)
+            {
+                if (US.unit5[i].GetComponent<UnitWeapon>().unitType == UnitType.Type6)
+                {
+                    hiddenObj19.Add(US.unit5[i]);
+                    break;
+                }
+            }
+
+            hidden19.text = hiddenObj19.Count.ToString() + " / 13";
+            if (hiddenObj19.Count == 13)
+            {
+                draw.epic += 1;
+                PG.CurrentGold += 1000;
+                PG.CurrentGas += 400;
+                HiddenClear(hidden19);
+                hiddenObj19.Clear();
+                hiddenClear19 = true;
+            }
+        }
+    }
+
+    public void Hidden20()
+    {
+        if (!hiddenClear20)
+        {
+            hiddenObj20.Clear();
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            int d = 0;
+
+            for (int i = 0; i < US.unit1.Count; i++)
+            {
+                if (US.unit1[i].GetComponent<UnitWeapon>().unitType == UnitType.Type1)
+                {
+                    hiddenObj20.Add(US.unit1[i]);
+                    a++;
+                    if (c == 3) break;
+                }
+            }
+            for (int i = 0; i < US.unit1.Count; i++)
+            {
+                if (US.unit1[i].GetComponent<UnitWeapon>().unitType == UnitType.Type3)
+                {
+                    hiddenObj20.Add(US.unit1[i]);
+                    b++;
+                    if (d == 3) break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type6)
+                {
+                    hiddenObj20.Add(US.unit3[i]);
+                    c++;
+                    if (c == 3) break;
+                }
+            }
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type8)
+                {
+                    hiddenObj20.Add(US.unit3[i]);
+                    d++;
+                    if (d == 3) break;
+                }
+            }
+            hidden20.text = hiddenObj20.Count.ToString() + " / 12";
+            if (hiddenObj20.Count == 12)
+            {
+                PH.DMG(-6f);
+                HiddenClear(hidden20);
+                hiddenObj20.Clear();
+                hiddenClear20 = true;
+            }
+        }
+    }
+
+    public void Hidden21()
+    {
+        if (!hiddenClear21)
+        {
+            hiddenObj21.Clear();
+            for (int i = 0; i < US.unit3.Count; i++)
+            {
+                if (US.unit3[i].GetComponent<UnitWeapon>().unitType == UnitType.Type5)
+                {
+                    hiddenObj21.Add(US.unit3[i]);
+                }
+            }
+            hidden21.text = hiddenObj21.Count.ToString() + " / 5";
+            if (hiddenObj21.Count == 5)
+            {
+                draw.draw += 3;
+                draw.unique += 1;
+                HiddenClear(hidden21);
+                hiddenObj21.Clear();
+                hiddenClear21 = true;
+            }
+
+        }
+    }
+
+    public void Hidden22()
+    {
+        if (!hiddenClear22)
+        {
+            hiddenObj22.Clear();
+            for (int i = 0; i < US.unit2.Count; i++)
+            {
+                if (US.unit2[i].GetComponent<UnitWeapon>().unitType == UnitType.Type1)
+                {
+                    hiddenObj22.Add(US.unit2[i]);
+                }
+            }
+            hidden22.text = hiddenObj22.Count.ToString() + " / 7";
+            if (hiddenObj22.Count == 7)
+            {
+                draw.unique += 1;
+                HiddenClear(hidden22);
+                hiddenObj22.Clear();
+                hiddenClear22 = true;
+            }
+
+        }
     }
 
     public void HiddenClear(Text text)

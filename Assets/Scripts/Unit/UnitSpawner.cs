@@ -86,7 +86,7 @@ public class UnitSpawner : MonoBehaviour
         UnitReMove(unit1);
         Tile tile = tileTransform.GetComponent<Tile>();
 
-        Pos = tileTransform.position;
+        Pos = tileTransform.position - new Vector3(0, 0, 3.5f);
         int a = Random.Range(0, unit2Prefab.Length);
         UnitWeapon clone = Instantiate(unit2Prefab[a], Pos, Quaternion.identity);
         clone.GetComponent<UnitWeapon>().Setup(ES);
@@ -100,7 +100,7 @@ public class UnitSpawner : MonoBehaviour
         UnitReMove(unit2);
         Tile tile = tileTransform.GetComponent<Tile>();
 
-        Pos = tileTransform.position;
+        Pos = tileTransform.position - new Vector3(0, 0, 3.5f);
         int a = Random.Range(0, unit3Prefab.Length);
         UnitWeapon clone = Instantiate(unit3Prefab[a], Pos, Quaternion.identity);
         clone.GetComponent<UnitWeapon>().Setup(ES);
@@ -113,7 +113,7 @@ public class UnitSpawner : MonoBehaviour
         UnitReMove(unit3);
         Tile tile = tileTransform.GetComponent<Tile>();
 
-        Pos = tileTransform.position;
+        Pos = tileTransform.position - new Vector3(0, 0, 3.5f);
         int a = Random.Range(0, unit4Prefab.Length);
         UnitWeapon clone = Instantiate(unit4Prefab[a], Pos, Quaternion.identity);
         clone.GetComponent<UnitWeapon>().Setup(ES);
@@ -126,7 +126,7 @@ public class UnitSpawner : MonoBehaviour
         UnitReMove(unit4);
         Tile tile = tileTransform.GetComponent<Tile>();
 
-        Pos = tileTransform.position;
+        Pos = tileTransform.position - new Vector3(0, 0, 3.5f);
         int a = Random.Range(0, unit5Prefab.Length);
         UnitWeapon clone = Instantiate(unit5Prefab[a], Pos, Quaternion.identity);
         clone.GetComponent<UnitWeapon>().Setup(ES);
@@ -162,16 +162,11 @@ public class UnitSpawner : MonoBehaviour
             if (OD.unitWeapon.unitValue == UnitValue.Value1)
             {
                 unit1.Remove(OD.unitWeapon);
-                hidden.Hidden1();
-                hidden.Hidden2();
                 playerGold.CurrentGold += 50;
             }
             else if (OD.unitWeapon.unitValue == UnitValue.Value2)
             {
                 unit2.Remove(OD.unitWeapon);
-                hidden.Hidden3();
-                hidden.Hidden4();
-                hidden.Hidden5();
                 playerGold.CurrentGold += 100;
             }
             else if (OD.unitWeapon.unitValue == UnitValue.Value3)
@@ -182,10 +177,6 @@ public class UnitSpawner : MonoBehaviour
             else if (OD.unitWeapon.unitValue == UnitValue.Value4)
             {
                 unit4.Remove(OD.unitWeapon);
-                hidden.Hidden6();
-                hidden.Hidden7();
-                hidden.Hidden8();
-                hidden.Hidden10();
                 playerGold.CurrentGold += 400;
             }
             else if (OD.unitWeapon.unitValue == UnitValue.Value5)
@@ -193,6 +184,26 @@ public class UnitSpawner : MonoBehaviour
                 unit5.Remove(OD.unitWeapon);
                 playerGold.CurrentGold += 800;
             }
+            hidden.Hidden1();
+            hidden.Hidden2();
+            hidden.Hidden3();
+            hidden.Hidden4();
+            hidden.Hidden5();
+            hidden.Hidden6();
+            hidden.Hidden7();
+            hidden.Hidden8();
+            hidden.Hidden10();
+            hidden.Hidden11();
+            hidden.Hidden12();
+            hidden.Hidden13();
+            hidden.Hidden14();
+            hidden.Hidden15();
+            hidden.Hidden16();
+            hidden.Hidden17();
+            hidden.Hidden19();
+            hidden.Hidden20();
+            hidden.Hidden21();
+            hidden.Hidden22();
             OD.unitWeapon.currentTile.SR.color = OD.unitWeapon.currentTile.reColor;
             OD.unitWeapon.currentTile.IsCheck = false;
             OD.unitWeapon.currentTile.IsBuildUnit = false;

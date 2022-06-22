@@ -28,6 +28,47 @@ public class UpGrade : MonoBehaviour
     public int cost8 = 10;
     public int randomGas = 0;
 
+    float normaltype1;
+    float normaltype2;
+    float normaltype3;
+    float normaltype4;
+    float normaltype5;
+    float normaltype6;
+    float normaltype7;
+    float normaltype8;
+    float magictype1;
+    float magictype2;
+    float magictype3;
+    float magictype4;
+    float magictype5;
+    float magictype6;
+    float magictype7;
+    float magictype8;
+    float raretype1;
+    float raretype2;
+    float raretype3;
+    float raretype4;
+    float raretype5;
+    float raretype6;
+    float raretype7;
+    float raretype8;
+    float uniquetype1;
+    float uniquetype2;
+    float uniquetype3;
+    float uniquetype4;
+    float uniquetype5;
+    float uniquetype6;
+    float uniquetype7;
+    float uniquetype8;
+    float epictype1;
+    float epictype2;
+    float epictype3;
+    float epictype4;
+    float epictype5;
+    float epictype6;
+    float epictype7;
+    float epictype8;
+
     float colora = 0;
     Color recolor;
 
@@ -83,8 +124,8 @@ public class UpGrade : MonoBehaviour
         if(PG.CurrentGas >= cost1)
         {
             PG.CurrentGas -= cost1;
-            unitUpGrade(0,10f);
-            InunitUpHrade(10f, UnitType.Type1);
+            unitUpGrade(0,normaltype1,magictype1,raretype1,uniquetype1,epictype1);
+            InunitUpHrade(normaltype1, magictype1, raretype1, uniquetype1, epictype1, UnitType.Type1);
             cost1 += 1;
 
         }
@@ -94,8 +135,8 @@ public class UpGrade : MonoBehaviour
         if (PG.CurrentGas >= cost2)
         {
             PG.CurrentGas -= cost2;
-            unitUpGrade(1, 10f);
-            InunitUpHrade(10f, UnitType.Type2);
+            unitUpGrade(1, normaltype2,magictype2,raretype2,uniquetype2,epictype2);
+            InunitUpHrade(normaltype2, magictype2, raretype2, uniquetype2, epictype2, UnitType.Type2);
             cost2 += 1;
 
         }
@@ -105,8 +146,8 @@ public class UpGrade : MonoBehaviour
         if (PG.CurrentGas >= cost3)
         {
             PG.CurrentGas -= cost3;
-            unitUpGrade(2, 10f);
-            InunitUpHrade(10f, UnitType.Type3);
+            unitUpGrade(2, normaltype3, magictype3, raretype3, uniquetype3, epictype3);
+            InunitUpHrade(normaltype3, magictype3, raretype3, uniquetype3, epictype3, UnitType.Type3);
             cost3 += 1;
         }
     }
@@ -115,8 +156,8 @@ public class UpGrade : MonoBehaviour
         if (PG.CurrentGas >= cost4)
         {
             PG.CurrentGas -= cost4;
-            unitUpGrade(3, 10f);
-            InunitUpHrade(10f, UnitType.Type4);
+            unitUpGrade(3, normaltype4, magictype4, raretype4, uniquetype4, epictype4);
+            InunitUpHrade(normaltype4, magictype4, raretype4, uniquetype4, epictype4, UnitType.Type4);
             cost4 += 1;
         }
     }
@@ -125,8 +166,8 @@ public class UpGrade : MonoBehaviour
         if (PG.CurrentGas >= cost5)
         {
             PG.CurrentGas -= cost5;
-            unitUpGrade(4, 10f);
-            InunitUpHrade(10f, UnitType.Type5);
+            unitUpGrade(4, normaltype5, magictype5, raretype5, uniquetype5, epictype5);
+            InunitUpHrade(normaltype5, magictype5, raretype5, uniquetype5, epictype5, UnitType.Type5);
             cost5 += 1;
         }
     }
@@ -135,8 +176,8 @@ public class UpGrade : MonoBehaviour
         if (PG.CurrentGas >= cost6)
         {
             PG.CurrentGas -= cost6;
-            unitUpGrade(5, 10f);
-            InunitUpHrade(10f, UnitType.Type6);
+            unitUpGrade(5, normaltype6, magictype6, raretype6, uniquetype6, epictype6);
+            InunitUpHrade(normaltype6, magictype6, raretype6, uniquetype6, epictype6, UnitType.Type6);
             cost6 += 1;
         }
     }
@@ -145,8 +186,8 @@ public class UpGrade : MonoBehaviour
         if (PG.CurrentGas >= cost7)
         {
             PG.CurrentGas -= cost7;
-            unitUpGrade(6, 10f);
-            InunitUpHrade(10f, UnitType.Type7);
+            unitUpGrade(6, normaltype7, magictype7, raretype7, uniquetype7, epictype7);
+            InunitUpHrade(normaltype7, magictype7, raretype7, uniquetype7, epictype7, UnitType.Type7);
             cost7 += 1;
         }
     }
@@ -155,56 +196,56 @@ public class UpGrade : MonoBehaviour
         if (PG.CurrentGas >= cost8)
         {
             PG.CurrentGas -= cost8;
-            unitUpGrade(7, 10f);
-            InunitUpHrade(10f, UnitType.Type8);
+            unitUpGrade(7, normaltype8, magictype8, raretype8, uniquetype8, epictype8);
+            InunitUpHrade(normaltype8, magictype8, raretype8, uniquetype8, epictype8, UnitType.Type8);
             cost8 += 1;
         }
     }
 
-    public void unitUpGrade(int i, float j)
+    public void unitUpGrade(int i, float a, float b, float c, float d, float e)
     {
-        US.unit1Prefab[i].GetComponent<UnitWeapon>().PowerUP(j);
-        US.unit2Prefab[i].GetComponent<UnitWeapon>().PowerUP(j);
-        US.unit3Prefab[i].GetComponent<UnitWeapon>().PowerUP(j);
-        US.unit4Prefab[i].GetComponent<UnitWeapon>().PowerUP(j);
-        US.unit5Prefab[i].GetComponent<UnitWeapon>().PowerUP(j);
+        US.unit1Prefab[i].GetComponent<UnitWeapon>().PowerUP(a);
+        US.unit2Prefab[i].GetComponent<UnitWeapon>().PowerUP(b);
+        US.unit3Prefab[i].GetComponent<UnitWeapon>().PowerUP(c);
+        US.unit4Prefab[i].GetComponent<UnitWeapon>().PowerUP(d);
+        US.unit5Prefab[i].GetComponent<UnitWeapon>().PowerUP(e);
     }
 
-    public void InunitUpHrade(float power, UnitType unitType)
+    public void InunitUpHrade(float a, float b, float c, float d, float e, UnitType unitType)
     {
         for (int i = 0; i < US.unit1.Count; i++)
         {
             if (US.unit1[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
-                US.unit1[i].GetComponent<UnitWeapon>().PowerUP(power);
+                US.unit1[i].GetComponent<UnitWeapon>().PowerUP(a);
             }
         }
         for (int i = 0; i < US.unit2.Count; i++)
         {
             if (US.unit2[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
-                US.unit2[i].GetComponent<UnitWeapon>().PowerUP(power);
+                US.unit2[i].GetComponent<UnitWeapon>().PowerUP(b);
             }
         }
         for (int i = 0; i < US.unit3.Count; i++)
         {
             if (US.unit3[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
-                US.unit3[i].GetComponent<UnitWeapon>().PowerUP(power);
+                US.unit3[i].GetComponent<UnitWeapon>().PowerUP(c);
             }
         }
         for (int i = 0; i < US.unit4.Count; i++)
         {
             if (US.unit4[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
-                US.unit4[i].GetComponent<UnitWeapon>().PowerUP(power);
+                US.unit4[i].GetComponent<UnitWeapon>().PowerUP(d);
             }
         }
         for (int i = 0; i < US.unit5.Count; i++)
         {
             if (US.unit5[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
-                US.unit5[i].GetComponent<UnitWeapon>().PowerUP(power);
+                US.unit5[i].GetComponent<UnitWeapon>().PowerUP(e);
             }
         }
     }

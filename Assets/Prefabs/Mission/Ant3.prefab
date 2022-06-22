@@ -100,7 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 1500
-  price: 200
+  currentHP: 0
+  price: 400
+  antValue: 2
 --- !u!114 &6097393911216189204
 MonoBehaviour:
   m_ObjectHideFlags: 0

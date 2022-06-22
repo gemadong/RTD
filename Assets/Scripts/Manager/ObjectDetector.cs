@@ -25,6 +25,7 @@ public class ObjectDetector : MonoBehaviour
     {
         camera = Camera.main;
     }
+
     private void Update()
     {
         if (mission.ispanel == true|| hidden.ispanel == true || upGrade.ispanel == true || draw.ispanel ==true || setting.ispanel == true) Iswindow = true;
@@ -156,9 +157,19 @@ public class ObjectDetector : MonoBehaviour
             hidden.Hidden7();
             hidden.Hidden8();
             hidden.Hidden10();
-
+            hidden.Hidden11();
+            hidden.Hidden12();
+            hidden.Hidden13();
+            hidden.Hidden14();
+            hidden.Hidden15();
+            hidden.Hidden16();
+            hidden.Hidden17();
+            hidden.Hidden19();
+            hidden.Hidden20();
+            hidden.Hidden22();
         }
     }
+
     public void NoCheck()
     {
         UDV.OffPane1();

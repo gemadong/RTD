@@ -10714,7 +10714,7 @@ MonoBehaviour:
   GM: {fileID: 1463855078}
   PG: {fileID: 1343000171}
   wave: 1
-  maxTime: 20
+  maxTime: 2
   currentTime: 0
   waitingTime: 0
 --- !u!1001 &711724008
@@ -19108,7 +19108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06f6f02e36e2b94fa1943408da2c4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGold: 2147483647
+  currentGold: 400
   currentGas: 0
   ant1: 0
   ant2: 0

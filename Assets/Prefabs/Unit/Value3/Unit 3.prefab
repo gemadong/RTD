@@ -146,11 +146,12 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5197268804230364834, guid: 9b94f97b935fbec49909bf831ed83b52, type: 3}
   SR: {fileID: 0}
   spawnPoint: {fileID: 8672172833594011725}
-  attackRate: 0.5
+  attackRate: 1
   attackRange: 2.6
-  power: 100
   level: 0
+  power: 180
   Target: {fileID: 0}
   unitType: 2
   unitValue: 2
   currentTile: {fileID: 0}
+  upGrade: 60

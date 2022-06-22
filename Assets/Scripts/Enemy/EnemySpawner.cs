@@ -48,8 +48,8 @@ public class EnemySpawner : MonoBehaviour
             float hpUp = WM.wave * 400;
             GameObject clone = Instantiate(currentWave.enemyPrefab);
             Enemy enemy = clone.GetComponent<Enemy>();
-            enemy.maxHP *= WM.wave+1;
-            enemy.currentHP = enemy.maxHP;
+            //enemy.maxHP *= WM.wave+1;
+            //enemy.currentHP = enemy.maxHP;
             enemy.Setup(this,wayPoints);
             enemyList.Add(enemy);
 

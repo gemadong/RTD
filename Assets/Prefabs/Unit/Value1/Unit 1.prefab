@@ -149,8 +149,9 @@ MonoBehaviour:
   attackRate: 0.5
   attackRange: 2.6
   level: 0
+  power: 30
   Target: {fileID: 0}
   unitType: 0
   unitValue: 0
   currentTile: {fileID: 0}
-  power: 60
+  upGrade: 6

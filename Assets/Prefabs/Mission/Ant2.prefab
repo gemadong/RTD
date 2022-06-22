@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 1
-  maxHP: 1000
+  maxHP: 25000
   currentHP: 0
   price: 200
   antValue: 1

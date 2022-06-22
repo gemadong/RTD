@@ -148,9 +148,10 @@ MonoBehaviour:
   spawnPoint: {fileID: 8672172833594011725}
   attackRate: 1
   attackRange: 2.6
-  power: 60
   level: 0
+  power: 35
   Target: {fileID: 0}
   unitType: 5
   unitValue: 0
   currentTile: {fileID: 0}
+  upGrade: 8

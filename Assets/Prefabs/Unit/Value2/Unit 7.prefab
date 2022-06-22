@@ -41,8 +41,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5045443552442764499}
   - component: {fileID: 1310156716758044542}
-  - component: {fileID: 7961294240115267142}
   - component: {fileID: 3757354923861324420}
+  - component: {fileID: 7961294240115267142}
   m_Layer: 0
   m_Name: Unit 7
   m_TagString: Unit
@@ -118,6 +118,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &3757354923861324420
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7134979378241627987}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.26, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7961294240115267142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,25 +146,13 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5572805465675658509, guid: 7886bb90a595a7d4e9144f1306003801, type: 3}
   SR: {fileID: 0}
   spawnPoint: {fileID: 8672172833594011725}
-  attackRate: 0.5
+  attackRate: 1
   attackRange: 2.6
-  power: 80
   level: 0
+  power: 90
   Target: {fileID: 0}
   unitType: 6
   unitValue: 1
   currentTile: {fileID: 0}
+  upGrade: 9
   Claw: {fileID: 7065474188270888643, guid: 339a2e7df07a19d4b814759de2eec868, type: 3}
---- !u!65 &3757354923861324420
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7134979378241627987}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.26, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}

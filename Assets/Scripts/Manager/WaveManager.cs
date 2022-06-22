@@ -27,7 +27,7 @@ public class WaveManager : MonoBehaviour
 
             if (wave == CurrentWave)
             {
-                PG.CurrentGold += 500;
+                PG.CurrentGold += 200;
                 wave++;
             }
             waitingTime = true;

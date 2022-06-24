@@ -11,7 +11,12 @@ public class TimeManager : MonoBehaviour
 
     public bool isStop = false;
 
-
+    private void Start()
+    {
+        isStop = false;
+        Time.timeScale = 1f;
+        quickness.text = "x1";
+    }
     public void SpeedUp()
     {
         if (!isStop)

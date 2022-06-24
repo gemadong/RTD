@@ -108,7 +108,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ed74de9705ad93f439c55a05bc921fae, type: 3}
-  m_Color: {r: 0.058318876, g: 0, b: 0.4528302, a: 1}
+  m_Color: {r: 0.21176471, g: 0.13333334, b: 0.7529412, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -154,4 +154,4 @@ MonoBehaviour:
   unitType: 5
   unitValue: 2
   currentTile: {fileID: 0}
-  upGrade: 16
+  upGrade: 0

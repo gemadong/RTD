@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 0
-  maxHP: 3900
+  maxHP: 4000
   currentHP: 0
 --- !u!114 &6097393911216189204
 MonoBehaviour:

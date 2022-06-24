@@ -11,14 +11,45 @@ public class Setting : MonoBehaviour
     [SerializeField] private Draw draw;
     [SerializeField] private TimeManager TM;
     [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject robbypanel;
+    [SerializeField] private GameObject retrypanel;
     [SerializeField] private Slider soundSlider;
 
     public bool ispanel = false;
+    public bool isrobbypanel = false;
+    public bool isretrypanel = false;
     public bool isSound = false;
 
     private float soundvalue = 0f;
 
-    
+    public void IsReTryPanel()
+    {
+        if (!isretrypanel)
+        {
+            retrypanel.SetActive(true);
+            isretrypanel = true;
+        }
+        else
+        {
+            retrypanel.SetActive(false);
+            isretrypanel = false;
+        }
+    }
+
+    public void IsRobbyPanel()
+    {
+        if (!isrobbypanel)
+        {
+            robbypanel.SetActive(true);
+            isrobbypanel = true;
+        }
+        else
+        {
+            robbypanel.SetActive(false);
+            isrobbypanel = false;
+        }
+    }
+
     public void IsPanel()
     {
         if (!ispanel)

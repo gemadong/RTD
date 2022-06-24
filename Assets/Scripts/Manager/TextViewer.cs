@@ -21,10 +21,10 @@ public class TextViewer : UIBase
 
     private void Update()
     {
-        playerHPText.text = "Life       " + playerHP.CurrentHP + "/" + playerHP.MaxHP;
+        playerHPText.text = "Life           " + playerHP.CurrentHP; // + "/" + playerHP.MaxHP;
         playerGoldText.text = "Gold           " + playerGold.CurrentGold.ToString();
         playerGasText.text = "Gas : " + playerGold.CurrentGas.ToString();
-        waveText.text = "Round  " + wave.CurrentWave + "/" + wave.Maxwave;
+        waveText.text = "Round       " + wave.CurrentWave; // + "/" + wave.Maxwave;
         killText.text = "Kill              " + ES.killCount;
         timeText.text = "Time           " + (wave.maxTime - (wave.currentTime - (wave.currentTime % 1)));
     }

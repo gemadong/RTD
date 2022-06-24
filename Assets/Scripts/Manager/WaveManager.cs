@@ -21,7 +21,7 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        if (ES.EnemyList.Count == 0||waitingTime)
+        if (ES.EnemyList.Count == 0 || waitingTime)
         {
             if (wave == Maxwave+1) GM.GameClear();
 
@@ -35,16 +35,16 @@ public class WaveManager : MonoBehaviour
 
             if (currentTime > maxTime)
             {
-                waitingTime = false;
                 StartWave();
                 currentTime = 0;
+                waitingTime = false;
             }
         }
     }
 
     public void StartWave()
     {
-        if(ES.EnemyList.Count == 0 && currentWaveIndex < waves.Length - 1)
+        if(ES.EnemyList.Count == 0 && currentWaveIndex < waves.Length - 1 || waitingTime)
         {
             currentWaveIndex++;
             ES.StartWave(waves[currentWaveIndex]);

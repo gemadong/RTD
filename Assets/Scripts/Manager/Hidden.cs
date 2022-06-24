@@ -7,12 +7,14 @@ public class Hidden : MonoBehaviour
 {
     [SerializeField] private Setting setting;
     [SerializeField] private UnitSpawner US;
+    [SerializeField] private EnemySpawner ES;
     [SerializeField] private PlayerGold PG;
     [SerializeField] private PlayerHP PH;
     [SerializeField] private Mission mission;
     [SerializeField] private Draw draw;
     [SerializeField] private UpGrade upGrade;
     [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject botton;
     [SerializeField] private Text hidden1;
     [SerializeField] private Text hidden2;
     [SerializeField] private Text hidden3;
@@ -57,6 +59,10 @@ public class Hidden : MonoBehaviour
     public List<UnitWeapon> hiddenObj22;
 
     public bool ispanel = false;
+
+    bool killhiddenClear1 = false;
+    bool killhiddenClear2 = false;
+    bool killhiddenClear3 = false;
     bool hiddenClear1 = false;
     bool hiddenClear2 = false;
     bool hiddenClear3= false;
@@ -80,10 +86,13 @@ public class Hidden : MonoBehaviour
     bool hiddenClear21 = false;
     bool hiddenClear22 = false;
 
+
+
     private void Update()
     {
         Hidden9();
         Hidden18();
+        KillHidden();
     }
 
     private void Start()
@@ -187,6 +196,7 @@ public class Hidden : MonoBehaviour
                 PG.CurrentGold += 300;
                 HiddenClear(hidden1);
                 hiddenObj1.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear1 = true;
             }
         }
@@ -211,6 +221,7 @@ public class Hidden : MonoBehaviour
                 PG.CurrentGold += 400;
                 HiddenClear(hidden2);
                 hiddenObj2.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear2 = true;
             }
 
@@ -295,6 +306,7 @@ public class Hidden : MonoBehaviour
                 PG.CurrentGas += 100;
                 HiddenClear(hidden3);
                 hiddenObj3.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear3 = true;
             }
         }
@@ -329,6 +341,7 @@ public class Hidden : MonoBehaviour
                 PG.CurrentGold += 400;
                 HiddenClear(hidden4);
                 hiddenObj4.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear4 = true;
             }
         }
@@ -354,6 +367,7 @@ public class Hidden : MonoBehaviour
                 draw.draw += 2;
                 HiddenClear(hidden5);
                 hiddenObj5.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear5 = true;
             }
         }
@@ -368,6 +382,7 @@ public class Hidden : MonoBehaviour
             {
                 PG.CurrentGold += 300;
                 HiddenClear(hidden6);
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear6 = true;
             }
         }
@@ -451,6 +466,7 @@ public class Hidden : MonoBehaviour
                     draw.draw += 3;
                     HiddenClear(hidden7);
                     hiddenObj7.Clear();
+                    StartCoroutine("HiddenClearBotten");
                     hiddenClear7 = true;
                 }
             }
@@ -476,6 +492,7 @@ public class Hidden : MonoBehaviour
                 PG.CurrentGas += 400;
                 HiddenClear(hidden8);
                 hiddenObj8.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear8 = true;
             }
 
@@ -491,6 +508,7 @@ public class Hidden : MonoBehaviour
             {
                 PG.CurrentGas += 400;
                 HiddenClear(hidden9);
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear9 = true;
             }
         }
@@ -564,6 +582,7 @@ public class Hidden : MonoBehaviour
                 draw.draw += 3;
                 HiddenClear(hidden10);
                 hiddenObj10.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear10 = true;
             }
         }
@@ -646,6 +665,7 @@ public class Hidden : MonoBehaviour
                 draw.unique += 1;
                 HiddenClear(hidden11);
                 hiddenObj11.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear11 = true;
             }
         }
@@ -727,6 +747,7 @@ public class Hidden : MonoBehaviour
                 draw.unique += 1;
                 HiddenClear(hidden12);
                 hiddenObj12.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear12 = true;
             }
         }
@@ -816,6 +837,7 @@ public class Hidden : MonoBehaviour
                 draw.draw += 2;
                 HiddenClear(hidden13);
                 hiddenObj13.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear13 = true;
             }
         }
@@ -874,6 +896,7 @@ public class Hidden : MonoBehaviour
                 draw.rare += 2;
                 HiddenClear(hidden14);
                 hiddenObj14.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear14 = true;
             }
         }
@@ -947,6 +970,7 @@ public class Hidden : MonoBehaviour
                 draw.draw += 1;
                 HiddenClear(hidden15);
                 hiddenObj15.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear15 = true;
             }
         }
@@ -995,6 +1019,7 @@ public class Hidden : MonoBehaviour
                 draw.epic += 1;
                 HiddenClear(hidden16);
                 hiddenObj16.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear16 = true;
             }
         }
@@ -1018,6 +1043,7 @@ public class Hidden : MonoBehaviour
                 draw.unique += 2;
                 HiddenClear(hidden17);
                 hiddenObj17.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear17 = true;
             }
 
@@ -1033,6 +1059,7 @@ public class Hidden : MonoBehaviour
             {
                 draw.unique += 1;
                 HiddenClear(hidden18);
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear18 = true;
             }
 
@@ -1154,9 +1181,10 @@ public class Hidden : MonoBehaviour
             {
                 draw.epic += 1;
                 PG.CurrentGold += 1000;
-                PG.CurrentGas += 400;
+                PG.CurrentGas += 4;
                 HiddenClear(hidden19);
                 hiddenObj19.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear19 = true;
             }
         }
@@ -1178,7 +1206,7 @@ public class Hidden : MonoBehaviour
                 {
                     hiddenObj20.Add(US.unit1[i]);
                     a++;
-                    if (c == 3) break;
+                    if (a >= 3) break;
                 }
             }
             for (int i = 0; i < US.unit1.Count; i++)
@@ -1187,7 +1215,7 @@ public class Hidden : MonoBehaviour
                 {
                     hiddenObj20.Add(US.unit1[i]);
                     b++;
-                    if (d == 3) break;
+                    if (b >= 3) break;
                 }
             }
             for (int i = 0; i < US.unit3.Count; i++)
@@ -1196,7 +1224,7 @@ public class Hidden : MonoBehaviour
                 {
                     hiddenObj20.Add(US.unit3[i]);
                     c++;
-                    if (c == 3) break;
+                    if (c >= 3) break;
                 }
             }
             for (int i = 0; i < US.unit3.Count; i++)
@@ -1205,7 +1233,7 @@ public class Hidden : MonoBehaviour
                 {
                     hiddenObj20.Add(US.unit3[i]);
                     d++;
-                    if (d == 3) break;
+                    if (d >= 3) break;
                 }
             }
             hidden20.text = hiddenObj20.Count.ToString() + " / 12";
@@ -1214,6 +1242,7 @@ public class Hidden : MonoBehaviour
                 PH.DMG(-6f);
                 HiddenClear(hidden20);
                 hiddenObj20.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear20 = true;
             }
         }
@@ -1238,6 +1267,7 @@ public class Hidden : MonoBehaviour
                 draw.unique += 1;
                 HiddenClear(hidden21);
                 hiddenObj21.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear21 = true;
             }
 
@@ -1262,9 +1292,38 @@ public class Hidden : MonoBehaviour
                 draw.unique += 1;
                 HiddenClear(hidden22);
                 hiddenObj22.Clear();
+                StartCoroutine("HiddenClearBotten");
                 hiddenClear22 = true;
             }
 
+        }
+    }
+
+    public void KillHidden()
+    {
+        if (!killhiddenClear1)
+        {
+            if(ES.killCount >= 250)
+            {
+                PG.CurrentGold += 200;
+                killhiddenClear1 = true;
+            }
+        }
+        if (!killhiddenClear2)
+        {
+            if (ES.killCount >= 500)
+            {
+                PG.CurrentGold += 300;
+                killhiddenClear2 = true;
+            }
+        }
+        if (!killhiddenClear3)
+        {
+            if (ES.killCount >= 750)
+            {
+                PG.CurrentGold += 400;
+                killhiddenClear3 = true;
+            }
         }
     }
 
@@ -1291,4 +1350,13 @@ public class Hidden : MonoBehaviour
             ispanel = false;
         }
     }
+
+    IEnumerator HiddenClearBotten()
+    {
+        Color reColor = botton.GetComponent<Image>().color;
+        botton.GetComponent<Image>().color = Color.yellow;
+        yield return new WaitForSeconds(0.2f);
+        botton.GetComponent<Image>().color = reColor;
+    }
+
 }

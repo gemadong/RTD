@@ -15,8 +15,10 @@ public class Bullet : MonoBehaviour
     }
     private void Update()
     {
+
         if (target != null)
         {
+            RotateToTarget();
             Vector3 direction = (target.position - transform.position).normalized;
             transform.position += direction * 5f * Time.deltaTime;
         }
@@ -32,4 +34,12 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
+    void RotateToTarget()
+    {
+        float dx = target.position.x - transform.position.x;
+        float dy = target.position.y - transform.position.y;
+
+        float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, degree);
+    }
 }

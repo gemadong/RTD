@@ -16,7 +16,7 @@ public class HPbar : MonoBehaviour
 
     private void Update()
     {
-        hp.value = enemy.CurrentHP / enemy.MaxHP;
+        hp.value = enemy.currentHP / enemy.maxHP;
     }
 
 

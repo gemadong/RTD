@@ -27,6 +27,8 @@ public class PenetrateBullet : MonoBehaviour
     private void Update()
     {
         currentTime += Time.deltaTime;
+        transform.Rotate(Vector3.forward * 5);
+
         transform.position += (direction+direction) * moveSpeed * Time.deltaTime;
         if (currentTime >= maxTime) Destroy(gameObject);
     }

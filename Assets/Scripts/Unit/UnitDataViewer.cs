@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class UnitDataViewer : MonoBehaviour
 {
-    [SerializeField] private Image imageUnit;
     [SerializeField] private Text DMGtext;
     [SerializeField] private Text Ratetext;
     [SerializeField] private Text Rangetext;
@@ -33,8 +32,6 @@ public class UnitDataViewer : MonoBehaviour
     }
     private void UpdateUnitDate()
     {
-        imageUnit.sprite = currentUnit.imageUnit;
-        imageUnit.color = currentUnit.color;
         DMGtext.text = "Damage : " + currentUnit.Damage;
         Ratetext.text = "Rate : " + currentUnit.Rate;
         Rangetext.text = "Range : " + currentUnit.Range;

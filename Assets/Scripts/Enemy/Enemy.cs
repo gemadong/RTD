@@ -29,12 +29,11 @@ public class Enemy : MonoBehaviour
     public float currentHP;
     protected bool isDie = false;
 
-    public float MaxHP => maxHP;
-    public float CurrentHP => currentHP;
+    public Animator animator;
 
-    private void Awake()
+    private void Start()
     {
-        currentHP = maxHP;
+        transform.localScale = new Vector3(-1f, 1f, 1f);
     }
 
 
@@ -59,9 +58,7 @@ public class Enemy : MonoBehaviour
 
         while (true)
         {
-            //transform.Rotate(Vector3.forward * 10);
-
-            if (Vector3.Distance(transform.position, wayPoints[currentIndex].position) < 0.1f * movement.MoveSpeed)
+            if (Vector3.Distance(transform.position, wayPoints[currentIndex].position) < 0.1f * movement.moveSpeed)
             {
                 NextMoveTo();
             }
@@ -73,10 +70,16 @@ public class Enemy : MonoBehaviour
     {
         if(currentIndex < wayPointCount - 1)
         {
+            if(currentIndex ==1|| currentIndex ==2|| currentIndex == 5 || currentIndex == 6 || currentIndex == 9 || currentIndex == 10)
+            {
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+            }
+            else transform.localScale = new Vector3(1f, 1f, 1f);
             transform.position = wayPoints[currentIndex].position;
             currentIndex++;
             Vector3 direction = (wayPoints[currentIndex].position - transform.position).normalized;
             movement.MoveTo(direction);
+            
         }
         else
         {
@@ -106,6 +109,19 @@ public class Enemy : MonoBehaviour
             isDie = true;
             OnDie(DestroyType.Kill, enemyType);
         }
+    }
+
+    public void DieAnimation()
+    {
+        StartCoroutine("DieAni");
+    }
+
+    IEnumerator DieAni()
+    {
+        movement.moveSpeed = 0f;
+        animator.SetTrigger("Die");
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
 }

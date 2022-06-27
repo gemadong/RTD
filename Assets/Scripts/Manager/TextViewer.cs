@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TextViewer : UIBase
+public class TextViewer : MonoBehaviour
 {
     [SerializeField] private PlayerHP playerHP;
     [SerializeField] private PlayerGold playerGold;

@@ -46,7 +46,7 @@ public class UnitSpawner : MonoBehaviour
         tile.IsBuildUnit = true;
 
         playerGold.CurrentGold -= unitBuildGold;
-        Pos = tileTransform.position -new Vector3(0, 0, 3.5f);
+        Pos = tileTransform.position -new Vector3(0, 0.3f, 3.5f);
 
         if (isdraw)
         {

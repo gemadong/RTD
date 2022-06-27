@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 0f;
+    public float moveSpeed = 1f;
     [SerializeField] private Vector3 moveDirection = Vector3.zero;
 
-    public float MoveSpeed => moveSpeed;
-
+    private void Start()
+    {
+        moveSpeed = 1f;
+    }
     private void Update()
     {
         transform.position += moveDirection * moveSpeed * Time.deltaTime;

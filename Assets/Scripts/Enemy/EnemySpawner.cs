@@ -24,13 +24,15 @@ public class EnemySpawner : MonoBehaviour
 
     public int killCount = 0;
 
+
+    public float[] enemyHP;
+
     private void Awake()
     {
         enemyList = new List<Enemy>();
         StartCoroutine("SpawnEnemy");
         killCount = 0;
     }
-
     public void StartWave(Wave wave)
     {
         currentWave = wave;
@@ -45,11 +47,10 @@ public class EnemySpawner : MonoBehaviour
 
         while (spawnEnemyCount < currentWave.maxEnemyCount)
         {
-            float hpUp = WM.wave * 400;
             GameObject clone = Instantiate(currentWave.enemyPrefab);
             Enemy enemy = clone.GetComponent<Enemy>();
-            //enemy.maxHP *= WM.wave+1;
-            //enemy.currentHP = enemy.maxHP;
+            enemy.maxHP = enemyHP[WM.wave-1];
+            enemy.currentHP = enemy.maxHP;
             enemy.Setup(this,wayPoints);
             enemyList.Add(enemy);
 
@@ -96,7 +97,7 @@ public class EnemySpawner : MonoBehaviour
 
         currentEnemyCount--;
         enemyList.Remove(enemy);
-        Destroy(enemy.gameObject);
+        enemy.DieAnimation();
     }
 
     private void spawnEnemyHP(GameObject enemy)

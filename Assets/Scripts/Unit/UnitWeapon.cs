@@ -32,8 +32,8 @@ public enum UnitType
 public class UnitWeapon : MonoBehaviour
 {
     [SerializeField] protected GameObject bulletPrefab;
-    [SerializeField] private SpriteRenderer SR;
     [SerializeField] protected Transform spawnPoint;
+    [SerializeField] protected Animator animator;
     [SerializeField] protected float attackRate = 0.5f;
     [SerializeField] protected float attackRange = 2.0f;
     [SerializeField] private int level = 0;
@@ -52,15 +52,6 @@ public class UnitWeapon : MonoBehaviour
     public float Rate => attackRate;
     public float Range => attackRange;
     public int Level => level + 1;
-    public Sprite imageUnit => SR.sprite;
-    public Color color => SR.color;
-    
-
-
-    private void Awake()
-    {
-        SR = GetComponent<SpriteRenderer>();
-    }
 
     public void Setup(EnemySpawner ES)
     {
@@ -85,7 +76,11 @@ public class UnitWeapon : MonoBehaviour
         float dy = Target.position.y - transform.position.y;
 
         float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, degree);
+        if (degree < 90 && degree >= -90)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        else transform.localScale = new Vector3(1f, 1f, 1f);
     }
 
     private IEnumerator Search()
@@ -93,7 +88,8 @@ public class UnitWeapon : MonoBehaviour
         while (true)
         {
             float closestDistSqr = Mathf.Infinity;
-            for(int i = 0; i < ES.EnemyList.Count; ++i)
+            animator.SetBool("Idle", true);
+            for (int i = 0; i < ES.EnemyList.Count; ++i)
             {
                 float distance = Vector3.Distance(ES.EnemyList[i].transform.position, transform.position);
 
@@ -126,6 +122,7 @@ public class UnitWeapon : MonoBehaviour
                 ChangeState(WeaponState.Search);
                 break;
             }
+            animator.SetTrigger("Atk");
             SpawnBullet();
             yield return new WaitForSeconds(attackRate);
         }

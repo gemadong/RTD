@@ -33,7 +33,7 @@ public class UnitWeapon : MonoBehaviour
 {
     [SerializeField] protected GameObject bulletPrefab;
     [SerializeField] protected Transform spawnPoint;
-    [SerializeField] protected Animator animator;
+    //[SerializeField] protected Animator animator;
     [SerializeField] protected float attackRate = 0.5f;
     [SerializeField] protected float attackRange = 2.0f;
     [SerializeField] private int level = 0;
@@ -88,7 +88,7 @@ public class UnitWeapon : MonoBehaviour
         while (true)
         {
             float closestDistSqr = Mathf.Infinity;
-            animator.SetBool("Idle", true);
+            //animator.SetBool("Idle", true);
             for (int i = 0; i < ES.EnemyList.Count; ++i)
             {
                 float distance = Vector3.Distance(ES.EnemyList[i].transform.position, transform.position);
@@ -122,7 +122,7 @@ public class UnitWeapon : MonoBehaviour
                 ChangeState(WeaponState.Search);
                 break;
             }
-            animator.SetTrigger("Atk");
+            //animator.SetTrigger("Atk");
             SpawnBullet();
             yield return new WaitForSeconds(attackRate);
         }

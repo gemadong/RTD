@@ -10731,10 +10731,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AntPrifab:
-  - {fileID: 6097393911216189207, guid: 039b11d8c8163ef4bbebb203cf032a30, type: 3}
-  - {fileID: 6097393911216189207, guid: 99f0e2f6903c23c45b76913a0807cecf, type: 3}
-  - {fileID: 6097393911216189207, guid: 818cf87e8363434468644804a3967fd5, type: 3}
+  - {fileID: 7651417214348976973, guid: 9c94d1281c65d204982c4dd14a1420de, type: 3}
+  - {fileID: 6991456449123349199, guid: 28afc8ee9d8d7c541bddfcf847def76b, type: 3}
+  - {fileID: 8250425182360729244, guid: fb4bffc2dddf8c34e9f266bb585d814d, type: 3}
   hpSlinder: {fileID: 3743136966160974377, guid: 0c13e5d8e86219d4785649f3f9d16b00, type: 3}
+  AnthpSlinder: {fileID: 3743136966160974377, guid: 2c965a4a7e9cbb94cb98c2a0bbb33191, type: 3}
   wayPoints:
   - {fileID: 1900193389}
   - {fileID: 1091013360}
@@ -28915,8 +28916,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913962967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.4096, y: -0.6421, z: 3}
-  m_LocalScale: {x: 1.991781, y: 1.6650511, z: 1}
+  m_LocalPosition: {x: 3.4096, y: -0.8938, z: 3}
+  m_LocalScale: {x: 1.991781, y: 1.5391732, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1457276692}
@@ -32571,8 +32572,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119062246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2052, y: -0.14, z: 0}
-  m_LocalScale: {x: 1.3507997, y: 1.1829394, z: 1}
+  m_LocalPosition: {x: 0.2052, y: -0.11, z: 0}
+  m_LocalScale: {x: 1.3507997, y: 1.0935092, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1900193389}

@@ -21,7 +21,7 @@ public class PenetrateBullet : MonoBehaviour
         direction = (target.position - transform.position).normalized;
         this.target = target;
         this.power = power;
-        
+        if (!Pos) RotateToTarget();
     }
 
     private void Update()
@@ -37,6 +37,7 @@ public class PenetrateBullet : MonoBehaviour
 
         if (other.CompareTag("Enemy"))
         {
+            Pos = true;
             other.GetComponent<Enemy>().DMG(power);
             isDmg = true;
         }
@@ -47,6 +48,6 @@ public class PenetrateBullet : MonoBehaviour
         float dy = target.position.y - transform.position.y;
 
         float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
-        //transform.rotation = new Vector3(0, 0, degree);
+        transform.rotation = Quaternion.Euler(0, 0, degree);
     }
 }

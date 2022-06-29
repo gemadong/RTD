@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] AntPrifab;
     [SerializeField] private GameObject hpSlinder;
+    [SerializeField] private GameObject AnthpSlinder;
     [SerializeField] private Transform[] wayPoints;
     [SerializeField] private Transform canvas;
     [SerializeField] private PlayerHP playerHP;
@@ -54,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
             enemy.Setup(this,wayPoints);
             enemyList.Add(enemy);
 
-            spawnEnemyHP(clone);
+            spawnEnemyHP(clone, hpSlinder);
 
             spawnEnemyCount++;
 
@@ -77,7 +78,7 @@ public class EnemySpawner : MonoBehaviour
         enemy.Setup(this, wayPoints);
         enemyList.Add(enemy);
 
-        spawnEnemyHP(clone);
+        spawnEnemyHP(clone, AnthpSlinder);
 
         currentEnemyCount++;
 
@@ -100,9 +101,9 @@ public class EnemySpawner : MonoBehaviour
         enemy.DieAnimation();
     }
 
-    private void spawnEnemyHP(GameObject enemy)
+    private void spawnEnemyHP(GameObject enemy, GameObject slinder)
     {
-        GameObject sliderClone = Instantiate(hpSlinder);
+        GameObject sliderClone = Instantiate(slinder);
         sliderClone.transform.SetParent(canvas);
         sliderClone.transform.localScale = Vector3.one;
 

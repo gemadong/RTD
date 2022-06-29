@@ -8,5 +8,6 @@ public class Unit2 : UnitWeapon
     {
         GameObject clone = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
         clone.GetComponent<PenetrateBullet>().Setup(Target, power + upGrade);
+        
     }
 }

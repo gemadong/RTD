@@ -27,7 +27,6 @@ public class PenetrateBullet : MonoBehaviour
     private void Update()
     {
         currentTime += Time.deltaTime;
-        transform.Rotate(Vector3.forward * 5);
 
         transform.position += (direction+direction) * moveSpeed * Time.deltaTime;
         if (currentTime >= maxTime) Destroy(gameObject);
@@ -41,5 +40,13 @@ public class PenetrateBullet : MonoBehaviour
             other.GetComponent<Enemy>().DMG(power);
             isDmg = true;
         }
+    }
+    void RotateToTarget()
+    {
+        float dx = target.position.x - transform.position.x;
+        float dy = target.position.y - transform.position.y;
+
+        float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
+        //transform.rotation = new Vector3(0, 0, degree);
     }
 }

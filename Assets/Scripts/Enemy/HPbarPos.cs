@@ -17,7 +17,7 @@ public class HPbarPos : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(targetTransform == null)
+        if(targetTransform == null|| targetTransform.gameObject.GetComponent<Enemy>().currentHP <= 0)
         {
             Destroy(gameObject);
             return;
@@ -25,8 +25,6 @@ public class HPbarPos : MonoBehaviour
         rect.position = targetTransform.position + distance;
 
     }
-
-
 
 
 }

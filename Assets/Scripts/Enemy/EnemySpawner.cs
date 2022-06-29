@@ -73,7 +73,7 @@ public class EnemySpawner : MonoBehaviour
 
         GameObject clone = Instantiate(AntPrifab[i]);
         Enemy enemy = clone.GetComponent<Enemy>();
-
+        enemy.currentHP = enemy.maxHP;
         enemy.Setup(this, wayPoints);
         enemyList.Add(enemy);
 

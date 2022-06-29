@@ -25,6 +25,7 @@ public class CushionBullet : MonoBehaviour
     {
         if (target != null)
         {
+            transform.Rotate(Vector3.forward * 8);
             Vector3 direction = (target.position - transform.position).normalized;
             transform.position += direction * moveSpeed * Time.deltaTime;
         }

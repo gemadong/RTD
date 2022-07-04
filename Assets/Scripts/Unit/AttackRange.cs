@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class AttackRange : MonoBehaviour
 {
-    private void Awake()
-    {
-        OffAttackRange();
-    }
     public void OnAttackRange(Vector3 pos, float range)
     {
         gameObject.SetActive(true);

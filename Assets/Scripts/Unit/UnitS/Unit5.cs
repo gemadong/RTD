@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Unit5 : UnitWeapon
 {
+    [SerializeField] private Transform rot;
+    protected override void Update()
+    {
+        if (Target != null) 
+        { 
+            RotateToTarget();
+            RotRotateToTarget(rot);
+        } 
+    }
     protected override IEnumerator Attack()
     {
         while (true)
@@ -22,6 +31,7 @@ public class Unit5 : UnitWeapon
                 break;
             }
             yield return new WaitForSeconds(0.1f);
+            animator.SetTrigger("Atk");
             SpawnBullet();
             yield return new WaitForSeconds(attackRate);
         }
@@ -29,7 +39,39 @@ public class Unit5 : UnitWeapon
     protected override void SpawnBullet()
     {
         GameObject clone = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-        clone.transform.rotation = transform.rotation;
+        clone.transform.rotation = rot.rotation;
         clone.GetComponent<Splash>().Setup(Target, power + upGrade);
+    }
+    protected override void RotateToTarget()
+    {
+        float dx = Target.position.x - transform.position.x;
+        float dy = Target.position.y - transform.position.y;
+
+        float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
+        if (degree < 90 && degree >= -90)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        else 
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        } 
+    }
+
+
+    void RotRotateToTarget(Transform bullet)
+    {
+        float dx = Target.position.x - transform.position.x;
+        float dy = Target.position.y - transform.position.y;
+
+        float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
+        if (degree < 90 && degree >= -90)
+        {
+            bullet.rotation = Quaternion.Euler(0, 0, degree);
+        }
+        else
+        {
+            bullet.rotation = Quaternion.Euler(0, 0, degree+180f);
+        }
     }
 }

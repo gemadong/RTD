@@ -21,7 +21,8 @@ public class MagicClaw : MonoBehaviour
 
     private void Update()
     {
-        if(target!=null) transform.position = target.position;
+        if (target != null) transform.position = target.position;
+        else Destroy(gameObject);
     }
 
 

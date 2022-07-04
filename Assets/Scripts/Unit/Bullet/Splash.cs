@@ -48,5 +48,12 @@ public class Splash : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
+    void RotateToTarget()
+    {
+        float dx = target.position.x - transform.position.x;
+        float dy = target.position.y - transform.position.y;
 
+        float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, degree);
+    }
 }

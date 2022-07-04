@@ -91,6 +91,8 @@ public class UpGrade : MonoBehaviour
         cost7 = 10;
         cost8 = 10;
         randomGas = 0;
+        
+        
         normaltype1 = 6;
         normaltype2 = 13;
         normaltype3 = 30;
@@ -131,6 +133,7 @@ public class UpGrade : MonoBehaviour
         epictype6 = 28;
         epictype7 = 18;
         epictype8 = 35;
+
         recolor = plusGas.color;
         
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HPbarPos : MonoBehaviour
 {
-    [SerializeField] private Vector3 distance = Vector3.up * 20f;
+    public Vector3 distance = Vector3.up * 20f;
 
     private Transform targetTransform;
     private RectTransform rect;

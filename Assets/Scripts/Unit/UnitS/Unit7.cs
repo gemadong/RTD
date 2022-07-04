@@ -24,6 +24,7 @@ public class Unit7 : UnitWeapon
                 break;
             }
             yield return new WaitForSeconds(0.1f);
+            animator.SetTrigger("Atk");
             SpawnBullet();
             yield return new WaitForSeconds(attackRate);
         }

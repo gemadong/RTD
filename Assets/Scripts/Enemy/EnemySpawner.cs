@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject[] AntPrifab;
     [SerializeField] private GameObject hpSlinder;
     [SerializeField] private GameObject AnthpSlinder;
+    [SerializeField] private GameObject WayPoint;
     [SerializeField] private Transform[] wayPoints;
     [SerializeField] private Transform canvas;
     [SerializeField] private PlayerHP playerHP;
@@ -34,13 +35,26 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine("SpawnEnemy");
         killCount = 0;
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SpawnWay();
+        }
+    }
     public void StartWave(Wave wave)
     {
         currentWave = wave;
         currentEnemyCount = currentWave.maxEnemyCount;
         StartCoroutine("SpawnEnemy");
     }
-
+    private void SpawnWay()
+    {
+        GameObject clone = Instantiate(WayPoint);
+        WayPoint way = clone.GetComponent<WayPoint>();
+        
+        way.Setup(wayPoints);
+    }
     private IEnumerator SpawnEnemy()
     {
         //생성된 에너미 숫자
@@ -55,6 +69,9 @@ public class EnemySpawner : MonoBehaviour
             enemy.Setup(this,wayPoints);
             enemyList.Add(enemy);
 
+            if (WM.wave % 10 == 0) hpSlinder.GetComponent<HPbarPos>().distance = new Vector3(0.1f, 1f, 0f);
+            else hpSlinder.GetComponent<HPbarPos>().distance = new Vector3(0.1f, 0.5f, 0f);
+            
             spawnEnemyHP(clone, hpSlinder);
 
             spawnEnemyCount++;

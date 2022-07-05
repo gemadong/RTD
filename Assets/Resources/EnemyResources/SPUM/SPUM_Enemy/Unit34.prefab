@@ -87,7 +87,7 @@ MonoBehaviour:
   enemyType: 0
   maxHP: 0
   currentHP: 0
-  animator: {fileID: 0}
+  animator: {fileID: 7553942419520684330}
 --- !u!114 &5410829177229004901
 MonoBehaviour:
   m_ObjectHideFlags: 0

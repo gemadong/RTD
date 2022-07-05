@@ -78,9 +78,9 @@ public class UnitWeapon : MonoBehaviour
         float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
         if (degree < 90 && degree >= -90)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            animator.transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        else transform.localScale = new Vector3(1f, 1f, 1f);
+        else animator.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 
     private IEnumerator Search()

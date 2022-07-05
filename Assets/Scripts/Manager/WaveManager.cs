@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
 {
@@ -8,16 +9,19 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private EnemySpawner ES;
     [SerializeField] private GameManager GM;
     [SerializeField] private PlayerGold PG;
+    [SerializeField] private Text stageText;
     private int currentWaveIndex = -1;
     public int wave = 1;
 
     public float maxTime = 20f;
     public float currentTime = 0f;
+    float f = 1f;
 
     public int CurrentWave => currentWaveIndex + 1;
     public int Maxwave => waves.Length;
 
     public bool waitingTime = false;
+    public bool TextTime = false;
 
     private void Update()
     {
@@ -36,8 +40,24 @@ public class WaveManager : MonoBehaviour
             if (currentTime > maxTime)
             {
                 StartWave();
+                TextTime = true;
                 currentTime = 0;
                 waitingTime = false;
+            }
+        }
+        if (TextTime)
+        {
+            stageText.gameObject.SetActive(true);
+            f -= Time.deltaTime *0.5f;
+            Color recolor = stageText.color;
+            recolor.a = f;
+            stageText.color = recolor;
+            stageText.text = CurrentWave.ToString() + " STAGE";
+            if (f <= 0)
+            {
+                stageText.gameObject.SetActive(false);
+                f = 1;
+                TextTime = false;
             }
         }
     }
@@ -50,7 +70,12 @@ public class WaveManager : MonoBehaviour
             ES.StartWave(waves[currentWaveIndex]);
         }
     }
+
+
+
 }
+
+
 
 [System.Serializable]
 public struct Wave

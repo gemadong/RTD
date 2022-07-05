@@ -2141,7 +2141,7 @@ Animator:
   m_GameObject: {fileID: 5006175421312620165}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ab937231d0600440fb0d8757568d78d7, type: 2}
+  m_Controller: {fileID: 9100000, guid: a61af8c0e08f99540b0dfa1b966f1e19, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2512,8 +2512,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5847531198904010600}
-  - component: {fileID: 2894840922555583083}
   - component: {fileID: 1030498484316534859}
+  - component: {fileID: -4001156037077172486}
   m_Layer: 0
   m_Name: Unit006
   m_TagString: Unit
@@ -2543,19 +2543,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &2894840922555583083
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6333884146968588814}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.7, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1030498484316534859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2568,7 +2555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1b2848fcfe8994bb0b44baba274351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5572805465675658509, guid: 7886bb90a595a7d4e9144f1306003801, type: 3}
+  bulletPrefab: {fileID: 2426717678979942891, guid: 80254a47391f1364fb168241910fba85, type: 3}
   spawnPoint: {fileID: 1899387851}
   animator: {fileID: 2395852389348632414}
   attackRate: 1
@@ -2580,7 +2567,19 @@ MonoBehaviour:
   unitValue: 0
   currentTile: {fileID: 0}
   upGrade: 0
-  Claw: {fileID: 7065474188270888643, guid: 339a2e7df07a19d4b814759de2eec868, type: 3}
+--- !u!65 &-4001156037077172486
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6333884146968588814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.7, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6416953953392481919
 GameObject:
   m_ObjectHideFlags: 0

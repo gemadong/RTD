@@ -5,18 +5,13 @@ using UnityEngine;
 public class Splash : MonoBehaviour
 {
     private Transform target;
-    private SpriteRenderer SR;
     
     private float power;
-    private float i=1;
 
-    Color color;
     Vector3 Pos;
 
     private void Start()
     {
-        SR = GetComponent<SpriteRenderer>();
-        color = SR.color;
         Pos = transform.position;
         Pos.z = 0;
         transform.position = Pos;
@@ -30,9 +25,6 @@ public class Splash : MonoBehaviour
 
     private void Update()
     {
-        i -= Time.deltaTime*1.5f;
-        color.a = i;
-        SR.color = color;
         if (target == null) Destroy(gameObject);
     }
 
@@ -45,6 +37,7 @@ public class Splash : MonoBehaviour
     private IEnumerator Impact(Collider2D other)
     {
         other.GetComponent<Enemy>().DMG(power);
+        GetComponent<BoxCollider2D>().enabled = false;
         yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
@@ -54,6 +47,6 @@ public class Splash : MonoBehaviour
         float dy = target.position.y - transform.position.y;
 
         float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, degree);
+        transform.rotation = Quaternion.Euler(0, 0, degree+90f);
     }
 }

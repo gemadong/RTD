@@ -50,11 +50,11 @@ public class Unit5 : UnitWeapon
         float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
         if (degree < 90 && degree >= -90)
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
+            animator.transform.localScale = new Vector3(-1f, 1f, 1f);
         }
         else 
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            animator.transform.localScale = new Vector3(1f, 1f, 1f);
         } 
     }
 
@@ -65,13 +65,6 @@ public class Unit5 : UnitWeapon
         float dy = Target.position.y - transform.position.y;
 
         float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
-        if (degree < 90 && degree >= -90)
-        {
-            bullet.rotation = Quaternion.Euler(0, 0, degree);
-        }
-        else
-        {
-            bullet.rotation = Quaternion.Euler(0, 0, degree+180f);
-        }
+        bullet.rotation = Quaternion.Euler(0, 0, degree+180f);
     }
 }

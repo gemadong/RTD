@@ -19,22 +19,22 @@ public class Explosion : MonoBehaviour
         SR = GetComponent<SpriteRenderer>();
         color = SR.color;
     }
-    private void Update()
-    {
-        if (!max)
-        {
-            i += Time.deltaTime *2f;
+    //private void Update()
+    //{
+    //    if (!max)
+    //    {
+    //        i += Time.deltaTime *2f;
             
-            if (i >= 1) max = true;
-        }
-        if(max)
-        {
-            i -= Time.deltaTime * 0.8f;
-            if (i <= 1) Destroy(bullet);
-        }
-        color.a = i;
-        SR.color = color;
-    }
+    //        if (i >= 1) max = true;
+    //    }
+    //    if(max)
+    //    {
+    //        i -= Time.deltaTime * 0.8f;
+    //        if (i <= 1) Destroy(bullet);
+    //    }
+    //    color.a = i;
+    //    SR.color = color;
+    //}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -45,7 +45,10 @@ public class Explosion : MonoBehaviour
     private IEnumerator Impact(Collider2D other)
     {
         other.GetComponent<Enemy>().DMG(power);
-        yield return new WaitForSeconds(5f);
+        CircleCollider2D Col = GetComponent<CircleCollider2D>();
+        Col.enabled = false;
+        yield return new WaitForSeconds(1f);
         Destroy(bullet);
     }
+
 }

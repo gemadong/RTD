@@ -11,11 +11,10 @@ public class MagicClaw : MonoBehaviour
     private float power;
 
 
-    public void Setup(Transform target, float power, GameObject Claw)
+    public void Setup(Transform target, float power)
     {
         this.target = target;
         this.power = power;
-        this.Claw = Claw;
 
     }
 
@@ -29,6 +28,7 @@ public class MagicClaw : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Enemy")) return;
+        if (other.transform != target) return;
         StartCoroutine(Impact(other));
     }
 
@@ -36,7 +36,6 @@ public class MagicClaw : MonoBehaviour
     {
         other.GetComponent<Enemy>().DMG(power);
         yield return new WaitForSeconds(1f);
-        Destroy(Claw);
         Destroy(gameObject);
     }
 }

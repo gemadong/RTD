@@ -5,7 +5,7 @@ using UnityEngine;
 public class CannonBullet : MonoBehaviour
 {
     [SerializeField] private GameObject explosion;
-    private Transform target;
+    public Transform target;
 
     private float power;
 
@@ -21,20 +21,36 @@ public class CannonBullet : MonoBehaviour
         if (target != null)
         {
             Vector3 direction = (target.position - transform.position).normalized;
-            transform.position += direction * 5f * Time.deltaTime;
+            RotateToTarget();
 
-            if (Vector3.Distance(transform.position, direction) <= 0.2f) explosion.SetActive(true);
+            if (Vector3.Distance(transform.position, direction) <= 0.2f) 
+            { 
+                explosion.SetActive(true);
+                transform.position = this.transform.position;
+            } 
+            else transform.position += direction * 5f * Time.deltaTime;
         }
         else Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Color recolor = this.GetComponent<SpriteRenderer>().color;
+        recolor.a = 0;
+        this.GetComponent<SpriteRenderer>().color = recolor;
         explosion.SetActive(true);
+
         
     }
 
+    void RotateToTarget()
+    {
+        float dx = target.position.x - transform.position.x;
+        float dy = target.position.y - transform.position.y;
 
+        float degree = Mathf.Atan2(dy, dx) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, degree);
+    }
 
 
 }

@@ -3467,8 +3467,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2120606987222739751}
-  - component: {fileID: -2435511670386766422}
   - component: {fileID: -8946861670748881538}
+  - component: {fileID: -4851277750825359593}
   m_Layer: 0
   m_Name: Unit005
   m_TagString: Unit
@@ -3498,19 +3498,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &-2435511670386766422
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7787677273605305173}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.7, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-8946861670748881538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3523,7 +3510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbfe2fc00e2ee145bf2695888f58f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5197268804230364834, guid: 690b517f6475e634cad04902c9c8a7ba, type: 3}
+  bulletPrefab: {fileID: 5029808036814022786, guid: def6154a4c303eb43b85a4c1a71f1bc3, type: 3}
   spawnPoint: {fileID: 90060630}
   animator: {fileID: 6572359629615758039}
   attackRate: 1
@@ -3535,6 +3522,19 @@ MonoBehaviour:
   unitValue: 0
   currentTile: {fileID: 0}
   upGrade: 0
+--- !u!65 &-4851277750825359593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7787677273605305173}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.7, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7791509983265022126
 GameObject:
   m_ObjectHideFlags: 0

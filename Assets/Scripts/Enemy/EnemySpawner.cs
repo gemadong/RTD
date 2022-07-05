@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private PlayerHP playerHP;
     [SerializeField] private Mission mission;
     [SerializeField] private WaveManager WM;
+    [SerializeField] private CameraShake CS;
 
 
     private Wave currentWave;
@@ -109,6 +110,7 @@ public class EnemySpawner : MonoBehaviour
             if (enemytype == EnemyType.Enemy) playerHP.DMG(1f);
             if (enemytype == EnemyType.Ant) playerHP.DMG(10f);
             if (enemytype == EnemyType.Boss) playerHP.DMG(playerHP.CurrentHP);
+            CS.Shake();
         }
 
         if (type == DestroyType.Kill) killCount += 1;

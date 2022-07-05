@@ -24,7 +24,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494340286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33,7 +33,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.2, y: 0}
+  m_AnchoredPosition: {x: -1.018, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &13379001959065515
@@ -3906,8 +3906,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2137476986698256796}
-  - component: {fileID: 5314998233947447163}
   - component: {fileID: 328820281886867809}
+  - component: {fileID: -6007785760203148305}
   m_Layer: 0
   m_Name: Unit004
   m_TagString: Unit
@@ -3937,19 +3937,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &5314998233947447163
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9037085530992337175}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.7, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &328820281886867809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3962,7 +3949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8abb2c51459ef9438b0fab8ac145c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5197268804230364834, guid: e398798f1e5c30b48a5994cd3a8a1a7b, type: 3}
+  bulletPrefab: {fileID: 8375254025642221487, guid: e398798f1e5c30b48a5994cd3a8a1a7b, type: 3}
   spawnPoint: {fileID: 494340287}
   animator: {fileID: 1923842905671389628}
   attackRate: 1.5
@@ -3975,6 +3962,19 @@ MonoBehaviour:
   currentTile: {fileID: 0}
   upGrade: 0
   rot: {fileID: 7906323935065095460}
+--- !u!65 &-6007785760203148305
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9037085530992337175}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.7, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9061443793566749662
 GameObject:
   m_ObjectHideFlags: 0

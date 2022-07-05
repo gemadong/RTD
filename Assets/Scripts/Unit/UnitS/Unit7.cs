@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Unit7 : UnitWeapon
 {
-    [SerializeField] private GameObject Claw;
 
     protected override IEnumerator Attack()
     {
@@ -23,8 +22,8 @@ public class Unit7 : UnitWeapon
                 ChangeState(WeaponState.Search);
                 break;
             }
-            yield return new WaitForSeconds(0.1f);
             animator.SetTrigger("Atk");
+            yield return new WaitForSeconds(0.2f);
             SpawnBullet();
             yield return new WaitForSeconds(attackRate);
         }
@@ -33,10 +32,8 @@ public class Unit7 : UnitWeapon
     {
         if (Target != null)
         {
-            GameObject clone1 = Instantiate(Claw, spawnPoint.position, Quaternion.identity);
             GameObject clone2 = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-            clone1.transform.rotation = transform.rotation;
-            clone2.GetComponent<MagicClaw>().Setup(Target, power + upGrade, clone1);
+            clone2.GetComponent<MagicClaw>().Setup(Target, power + upGrade);
         }
         
     }

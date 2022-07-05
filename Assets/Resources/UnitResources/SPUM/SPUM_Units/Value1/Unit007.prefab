@@ -3123,8 +3123,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4439312021632659815}
-  - component: {fileID: 3087298921788930211}
   - component: {fileID: -1527711749372604219}
+  - component: {fileID: -8856404093482174765}
   m_Layer: 0
   m_Name: Unit007
   m_TagString: Unit
@@ -3154,19 +3154,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!65 &3087298921788930211
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6698739606371923574}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.7, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-1527711749372604219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3191,6 +3178,19 @@ MonoBehaviour:
   unitValue: 0
   currentTile: {fileID: 0}
   upGrade: 0
+--- !u!65 &-8856404093482174765
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6698739606371923574}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.7, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6722936743360932990
 GameObject:
   m_ObjectHideFlags: 0

@@ -2733,7 +2733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1b2848fcfe8994bb0b44baba274351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 5572805465675658509, guid: 7886bb90a595a7d4e9144f1306003801, type: 3}
+  bulletPrefab: {fileID: 2426717678979942891, guid: 80254a47391f1364fb168241910fba85, type: 3}
   spawnPoint: {fileID: 1883695558}
   animator: {fileID: 2395852389348632414}
   attackRate: 1
@@ -2745,7 +2745,6 @@ MonoBehaviour:
   unitValue: 1
   currentTile: {fileID: 0}
   upGrade: 0
-  Claw: {fileID: 7065474188270888643, guid: 339a2e7df07a19d4b814759de2eec868, type: 3}
 --- !u!1 &6416953953392481919
 GameObject:
   m_ObjectHideFlags: 0

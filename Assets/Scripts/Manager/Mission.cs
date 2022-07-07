@@ -13,6 +13,7 @@ public class Mission : MonoBehaviour
     [SerializeField] private GameObject Mission1panel;
     [SerializeField] private GameObject Mission2panel;
     [SerializeField] private GameObject Mission3panel;
+    [SerializeField] private GameObject botton;
 
     public bool ispanel = false;
 
@@ -33,6 +34,7 @@ public class Mission : MonoBehaviour
             Mission1panel.GetComponent<Image>().fillAmount = coolTime1 / 300f;
             if (coolTime1 <= 0)
             {
+                StartCoroutine("ClearBotten");
                 Mission1panel.GetComponent<Image>().fillAmount = 1;
                 coolTime1 = 300f;
                 Mission1panel.SetActive(false);
@@ -47,6 +49,7 @@ public class Mission : MonoBehaviour
             Mission2panel.GetComponent<Image>().fillAmount = coolTime2 / 300f;
             if (coolTime2 <= 0)
             {
+                StartCoroutine("ClearBotten");
                 Mission2panel.GetComponent<Image>().fillAmount = 1;
                 coolTime2 = 300f;
                 Mission2panel.SetActive(false);
@@ -60,6 +63,7 @@ public class Mission : MonoBehaviour
             Mission3panel.GetComponent<Image>().fillAmount = coolTime3 / 300f;
             if (coolTime3 <= 0)
             {
+                StartCoroutine("ClearBotten");
                 Mission3panel.GetComponent<Image>().fillAmount = 1;
                 coolTime3 = 300f;
                 Mission3panel.SetActive(false);
@@ -83,5 +87,12 @@ public class Mission : MonoBehaviour
             panel.SetActive(false);
             ispanel = false;
         }
+    }
+    IEnumerator ClearBotten()
+    {
+        Color reColor = botton.GetComponent<Image>().color;
+        botton.GetComponent<Image>().color = Color.yellow;
+        yield return new WaitForSeconds(0.2f);
+        botton.GetComponent<Image>().color = reColor;
     }
 }

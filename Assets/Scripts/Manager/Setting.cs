@@ -64,6 +64,8 @@ public class Setting : MonoBehaviour
         }
         else
         {
+            if (isretrypanel) IsReTryPanel();
+            if (isrobbypanel) IsRobbyPanel();
             TM.IsStop();
             panel.SetActive(false);
             ispanel = false;

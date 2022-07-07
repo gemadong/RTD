@@ -106,6 +106,12 @@ public class Enemy : MonoBehaviour
     {
         if (currentHP <= 0)
         {
+            WaveManager WM = FindObjectOfType<WaveManager>();
+            if(WM.wave ==10|| WM.wave == 20|| WM.wave == 30)
+            {
+                Draw draw = FindObjectOfType<Draw>();
+                draw.draw += 1;
+            }
             isDie = true;
             OnDie(DestroyType.Kill, enemyType);
         }

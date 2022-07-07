@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private CameraShake CS;
 
 
-    private Wave currentWave;
+    public Wave currentWave;
     private List<Enemy> enemyList;
     public List<Enemy> EnemyList => enemyList;
 
@@ -114,9 +114,9 @@ public class EnemySpawner : MonoBehaviour
         }
 
         if (type == DestroyType.Kill) killCount += 1;
+        enemyList.Remove(enemy);
 
         currentEnemyCount--;
-        enemyList.Remove(enemy);
         enemy.DieAnimation();
     }
 

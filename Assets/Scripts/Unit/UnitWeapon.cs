@@ -109,7 +109,7 @@ public class UnitWeapon : MonoBehaviour
     {
         while (true)
         {
-            if(Target == null)
+            if(Target == null )//|| Target.GetComponent<Enemy>().currentHP<=0)
             {
                 ChangeState(WeaponState.Search);
                 break;

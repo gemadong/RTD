@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 5717050208180771197}
   - component: {fileID: 191469791621521653}
   - component: {fileID: 2713218126976767930}
+  - component: {fileID: -2791920282970549593}
   m_Layer: 0
   m_Name: Splash
   m_TagString: Untagged
@@ -199,3 +200,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-2791920282970549593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8375254025642221487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e028a7250889b40a8074068c7169d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

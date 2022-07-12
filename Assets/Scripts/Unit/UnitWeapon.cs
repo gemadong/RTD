@@ -32,11 +32,11 @@ public enum UnitType
 public class UnitWeapon : MonoBehaviour
 {
     [SerializeField] protected GameObject bulletPrefab;
+    [SerializeField] protected GameObject check;
     [SerializeField] protected Transform spawnPoint;
     [SerializeField] protected Animator animator;
     [SerializeField] protected float attackRate = 0.5f;
     [SerializeField] protected float attackRange = 2.0f;
-    [SerializeField] private int level = 0;
     [SerializeField] protected float power = 60f;
     [SerializeField] protected Transform Target = null;
 
@@ -48,10 +48,11 @@ public class UnitWeapon : MonoBehaviour
     public Tile currentTile = null;
 
     public float upGrade=0;
-    public float Damage => power+upGrade;
+    public float Damage => power;
     public float Rate => attackRate;
     public float Range => attackRange;
-    public int Level => level + 1;
+
+    bool isCheck = false;
 
     public void Setup(EnemySpawner ES)
     {
@@ -142,6 +143,20 @@ public class UnitWeapon : MonoBehaviour
     public void PowerUP(float f)
     {
         upGrade += f;
+    }
+
+    public void Check()
+    {
+        if (isCheck) 
+        { 
+            check.SetActive(false);
+            isCheck = false;
+        } 
+        else
+        {
+            check.SetActive(true);
+            isCheck = true;
+        }
     }
 
 }

@@ -30,15 +30,19 @@ public class ObjectDetector : MonoBehaviour
     {
         if (mission.ispanel == true|| hidden.ispanel == true || upGrade.ispanel == true || draw.ispanel ==true || setting.ispanel == true) Iswindow = true;
         else if (mission.ispanel == false&& hidden.ispanel == false&& upGrade.ispanel == false && draw.ispanel == false && setting.ispanel == false) Iswindow = false;
+        
         if (Iswindow && IsCheckBlind) NoCheck();
 
         if (Input.GetMouseButtonDown(0))
         {
             ray = camera.ScreenPointToRay(Input.mousePosition);
+            
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
+                
 
                 if (hit.transform.CompareTag("UI")) return;
+
                 if (Iswindow)
                 {
                     if (mission.ispanel == true) mission.IsPanel();
@@ -64,7 +68,7 @@ public class ObjectDetector : MonoBehaviour
                     else if (hit.transform.CompareTag("Unit"))
                     {
                         UDV.OnPane1(hit.transform);
-
+                        
                         unitWeapon = hit.transform.gameObject.GetComponent<UnitWeapon>();
                         tile = hit.transform.gameObject.GetComponent<UnitWeapon>().currentTile;
                         tile.IsCheck = true;

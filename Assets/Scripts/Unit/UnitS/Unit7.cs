@@ -33,7 +33,7 @@ public class Unit7 : UnitWeapon
         if (Target != null)
         {
             GameObject clone2 = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-            clone2.GetComponent<MagicClaw>().Setup(Target, power + upGrade);
+            clone2.GetComponent<MagicClaw>().Setup(Target, Damage + upGrade);
         }
         
     }

@@ -27,18 +27,22 @@ public class UnitSpawner : MonoBehaviour
 
 
     public List<UnitWeapon> drawUnit;
-    
 
     private Vector3 Pos;
     private Color ReColor = new Color(0.84f, 0.84f, 0.84f);
 
     public bool merge = false;
     public bool isdraw = false;
+    
+    
+    private void Start()
+    {
+    }
 
     public void SpawnUnit(Transform tileTransform)
     {
         if (unitBuildGold > playerGold.CurrentGold) return;
-
+        
         Tile tile = tileTransform.GetComponent<Tile>();
 
         if (tile.IsBuildUnit == true) return;

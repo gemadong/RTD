@@ -21,11 +21,11 @@ public class TextViewer : MonoBehaviour
 
     private void Update()
     {
-        playerHPText.text = "Life                  " + playerHP.CurrentHP; // + "/" + playerHP.MaxHP;
-        playerGoldText.text = "Gold           " + playerGold.CurrentGold.ToString();
+        playerHPText.text = "Life\n" + playerHP.CurrentHP; 
+        playerGoldText.text = "Gold\n" + playerGold.CurrentGold.ToString();
         playerGasText.text = "Gas : " + playerGold.CurrentGas.ToString();
-        waveText.text = "Round       " + wave.CurrentWave; // + "/" + wave.Maxwave;
-        killText.text = "Kill              " + ES.killCount;
-        timeText.text = "Time           " + (wave.maxTime - (wave.currentTime - (wave.currentTime % 1)));
+        waveText.text = "Round\n" + wave.CurrentWave;
+        killText.text = "Kill\n" + ES.killCount;
+        timeText.text = "Time\n" + (wave.maxTime - (wave.currentTime - (wave.currentTime % 1)));
     }
 }

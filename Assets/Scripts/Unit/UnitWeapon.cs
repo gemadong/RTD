@@ -48,7 +48,8 @@ public class UnitWeapon : MonoBehaviour
     public Tile currentTile = null;
 
     public float upGrade=0;
-    public float Damage => power;
+    public float reinforce = 0;
+    public float Damage => power + ((power / 100) *  reinforce);
     public float Rate => attackRate;
     public float Range => attackRange;
 
@@ -132,7 +133,7 @@ public class UnitWeapon : MonoBehaviour
     protected virtual void SpawnBullet()
     {
         GameObject clone = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-        clone.GetComponent<Bullet>().Setup(Target, power+upGrade);
+        clone.GetComponent<Bullet>().Setup(Target, Damage+upGrade);
     }
 
     public void DestroyUnit()

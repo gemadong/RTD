@@ -40,7 +40,7 @@ public class Unit5 : UnitWeapon
     {
         GameObject clone = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
         clone.transform.rotation = rot.rotation;
-        clone.GetComponent<Splash>().Setup(Target, power + upGrade);
+        clone.GetComponent<Splash>().Setup(Target, Damage + upGrade);
     }
     protected override void RotateToTarget()
     {

@@ -7,6 +7,6 @@ public class Unit3 : UnitWeapon
     protected override void SpawnBullet()
     {
         GameObject clone = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-        clone.GetComponent<CushionBullet>().Setup(Target, (power + upGrade)/3);
+        clone.GetComponent<CushionBullet>().Setup(Target, (Damage + upGrade)/3);
     }
 }

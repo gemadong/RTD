@@ -36,7 +36,7 @@ public class UnitDataViewer : MonoBehaviour
     }
     private void UpdateUnitDate()
     {
-        DMGtext.text = "데미지 : " + currentUnit.Damage+" + " + currentUnit.upGrade;
+        DMGtext.text = "데미지 : " + currentUnit.Damage+" (+" + currentUnit.upGrade+")";
         Ratetext.text = "공격속도 : " + currentUnit.Rate;
         Rangetext.text = "사거리 : " + currentUnit.Range;
         if (currentUnit.unitValue == UnitValue.Value1) Leveltext.text = "등급 : 일반";

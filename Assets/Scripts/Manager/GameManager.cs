@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TimeManager TM;
     [SerializeField] private GameObject Over;
     [SerializeField] private GameObject Clear;
+    [SerializeField] private int moneyP;
+    [SerializeField] private int ingredientP;
 
     private void Update()
     {
@@ -24,6 +26,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         TM.isStop = true;
         Clear.SetActive(true);
+        Singleton.instance.money += moneyP;
+        for(int i = 0; i < ingredientP; i++)
+        {
+            int a = Random.Range(0, 8);
+            Singleton.instance.currentIngredient[a] += 1;
+        }
     }
     public void GameStart()
     {

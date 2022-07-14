@@ -11,11 +11,6 @@ public class CameraShake : MonoBehaviour
     Vector3 cameraPos;
     Vector3 Pos;
 
-    float a = 125f;
-    Color recolor;
-
-    bool isBlood = false;
-
 
     [SerializeField] [Range(0.01f, 0.1f)] float shakeRange = 0.05f;
     [SerializeField] [Range(0.1f, 1f)] float duration = 0.5f;

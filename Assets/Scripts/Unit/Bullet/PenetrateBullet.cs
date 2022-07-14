@@ -13,7 +13,6 @@ public class PenetrateBullet : MonoBehaviour
     private float power;
     private float currentTime = 0;
 
-    bool isDmg = true;
     bool Pos = false;
 
     public void Setup(Transform target, float power)
@@ -39,7 +38,6 @@ public class PenetrateBullet : MonoBehaviour
         {
             Pos = true;
             other.GetComponent<Enemy>().DMG(power);
-            isDmg = true;
         }
     }
     void RotateToTarget()

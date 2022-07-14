@@ -9,19 +9,15 @@ public class RobbyManager : MonoBehaviour
     [SerializeField] private Text moneyText;
 
 
-    public int money;
-    public float[] currentIngredient;
-
-
     private void Update()
     {
-        moneyText.text = "$ " + money.ToString();
+        moneyText.text = "$ " + Singleton.instance.money.ToString();
     }
 
 
     public void MoneyPlus(int plus)
     {
-        money += plus;
+        Singleton.instance.money += plus;
     }
 
 
@@ -38,6 +34,11 @@ public class RobbyManager : MonoBehaviour
 
 
 
+    public void FastGameStart()
+    {
+        SceneManager.LoadScene("FastScene");
+    }
+    
     public void GameStart()
     {
         SceneManager.LoadScene("MainScene");

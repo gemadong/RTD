@@ -27,7 +27,11 @@ public class WaveManager : MonoBehaviour
     {
         if (ES.EnemyList.Count == 0 || waitingTime)
         {
-            if (wave == Maxwave+1) GM.GameClear();
+            if (wave == Maxwave + 1) 
+            { 
+                GM.GameClear();
+                wave ++;
+            } 
 
             if (wave == CurrentWave)
             {

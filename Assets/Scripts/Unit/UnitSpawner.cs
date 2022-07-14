@@ -37,6 +37,14 @@ public class UnitSpawner : MonoBehaviour
     
     private void Start()
     {
+        for(int i = 0; i < 8; i++)
+        {
+            unit1Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+            unit2Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+            unit3Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+            unit4Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+            unit5Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+        }
     }
 
     public void SpawnUnit(Transform tileTransform)
@@ -51,7 +59,6 @@ public class UnitSpawner : MonoBehaviour
 
         playerGold.CurrentGold -= unitBuildGold;
         Pos = tileTransform.position -new Vector3(0, 0f, 3.5f);
-        //Pos = tileTransform.position -new Vector3(0, 0.3f, 3.5f);
 
         if (isdraw)
         {

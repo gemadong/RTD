@@ -20,6 +20,9 @@ public class Singleton : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public int[] reinforceUp;
-
+    public int money;
+    public float[] currentIngredient;
+    public int[] classCount;
+    public int[] price;
+    public float[] ingredientMax;
 }

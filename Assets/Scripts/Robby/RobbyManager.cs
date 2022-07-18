@@ -11,7 +11,7 @@ public class RobbyManager : MonoBehaviour
 
     private void Update()
     {
-        moneyText.text = "$ " + Singleton.instance.money.ToString();
+        moneyText.text = "$ " + Singleton.instance.money;
     }
 
 

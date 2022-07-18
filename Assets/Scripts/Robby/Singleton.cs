@@ -22,6 +22,7 @@ public class Singleton : MonoBehaviour
 
     public int money;
     public float[] currentIngredient;
+    public float[] currentItem;
     public int[] classCount;
     public int[] price;
     public float[] ingredientMax;

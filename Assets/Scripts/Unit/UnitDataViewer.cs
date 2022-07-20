@@ -10,10 +10,12 @@ public class UnitDataViewer : MonoBehaviour
     [SerializeField] private Text Ratetext;
     [SerializeField] private Text Rangetext;
     [SerializeField] private Text Leveltext;
+    [SerializeField] private GameObject UnitPos;
 
     [SerializeField] private AttackRange AR;
 
     private UnitWeapon currentUnit;
+    private UnitWeapon clone;
 
     private void Awake()
     {
@@ -22,6 +24,7 @@ public class UnitDataViewer : MonoBehaviour
     public void OnPane1(Transform unitWeapon)
     {
         currentUnit = unitWeapon.GetComponent<UnitWeapon>();
+        clone = Instantiate(currentUnit, UnitPos.transform.position, Quaternion.identity);
         gameObject.SetActive(true);
         UpdateUnitDate();
         AR.OnAttackRange(currentUnit.transform.position, currentUnit.Range);
@@ -29,7 +32,8 @@ public class UnitDataViewer : MonoBehaviour
     }
     public void OffPane1()
     {
-        if(currentUnit!=null) Find();
+        if(clone != null) Destroy(clone.gameObject);
+        if (currentUnit != null) Find();
         AR.OffAttackRange();
         gameObject.SetActive(false);
         currentUnit = null;
@@ -45,7 +49,6 @@ public class UnitDataViewer : MonoBehaviour
         if (currentUnit.unitValue == UnitValue.Value4) Leveltext.text = "등급 : 유니크";
         if (currentUnit.unitValue == UnitValue.Value5) Leveltext.text = "등급 : 에픽";
     }
-
     private void Find()
     {
         if (currentUnit.unitValue == UnitValue.Value1)
@@ -86,5 +89,6 @@ public class UnitDataViewer : MonoBehaviour
 
 
     }
+
 
 }

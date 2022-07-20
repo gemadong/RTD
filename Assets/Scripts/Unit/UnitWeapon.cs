@@ -111,7 +111,7 @@ public class UnitWeapon : MonoBehaviour
     {
         while (true)
         {
-            if(Target == null )//|| Target.GetComponent<Enemy>().currentHP<=0)
+            if(Target == null )
             {
                 ChangeState(WeaponState.Search);
                 break;
@@ -148,11 +148,11 @@ public class UnitWeapon : MonoBehaviour
 
     public void Check()
     {
-        if (isCheck) 
-        { 
+        if (isCheck)
+        {
             check.SetActive(false);
             isCheck = false;
-        } 
+        }
         else
         {
             check.SetActive(true);

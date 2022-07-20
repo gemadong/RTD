@@ -179,9 +179,17 @@ public class ObjectDetector : MonoBehaviour
         UDV.OffPane1();
         if(tile != null)
         {
-        tile.IsCheck = false;
-        tile = null;
+            tile.IsCheck = false;
+            tile = null;
         }
         IsCheckBlind = false;
+        StartCoroutine("unitNull");
+
+    }
+
+    IEnumerator unitNull()
+    {
+        yield return new WaitForSeconds(0.1f);
+        unitWeapon = null;
     }
 }

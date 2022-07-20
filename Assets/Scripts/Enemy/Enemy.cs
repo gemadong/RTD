@@ -17,10 +17,10 @@ public enum EnemyType
 
 public class Enemy : MonoBehaviour
 {
-    private int wayPointCount;
-    private Transform[] wayPoints;
-    private int currentIndex = 0;
-    private Movement movement;
+    protected int wayPointCount;
+    protected Transform[] wayPoints;
+    protected int currentIndex = 0;
+    protected Movement movement;
     private EnemySpawner ES;
     
     public EnemyType enemyType;
@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void NextMoveTo()
+    protected virtual void NextMoveTo()
     {
         if(currentIndex < wayPointCount - 1)
         {

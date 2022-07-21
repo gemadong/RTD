@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
 
     public Animator animator;
 
+    public bool die = false;
     private void Start()
     {
         transform.localScale = new Vector3(-1f, 1f, 1f);
@@ -113,6 +114,7 @@ public class Enemy : MonoBehaviour
                 draw.draw += 1;
             }
             isDie = true;
+            die = true;
             OnDie(DestroyType.Kill, enemyType);
         }
     }
@@ -124,6 +126,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator DieAni()
     {
+        die = true;
         movement.moveSpeed = 0f;
         animator.SetTrigger("Die");
         yield return new WaitForSeconds(1f);

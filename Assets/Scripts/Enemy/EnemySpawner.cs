@@ -14,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Mission mission;
     [SerializeField] private WaveManager WM;
     [SerializeField] private CameraShake CS;
+    [SerializeField] private PlayerGold PG;
 
 
     public Wave currentWave;
@@ -113,7 +114,13 @@ public class EnemySpawner : MonoBehaviour
             CS.Shake();
         }
 
-        if (type == DestroyType.Kill) killCount += 1;
+        if (type == DestroyType.Kill) 
+        { 
+            killCount += 1;
+            if (killCount == 250) PG.CurrentGold += 200;
+            if (killCount == 500) PG.CurrentGold += 300;
+            if (killCount == 750) PG.CurrentGold += 400;
+        } 
         enemyList.Remove(enemy);
 
         currentEnemyCount--;

@@ -101,7 +101,7 @@ public class UnitWeapon : MonoBehaviour
                     Target = ES.EnemyList[i].transform;
                 }
             }
-            if (Target != null) ChangeState(WeaponState.Attack);
+            if (Target != null && Target.GetComponent<Enemy>().die == false) ChangeState(WeaponState.Attack);
 
             yield return null;
         }
@@ -111,7 +111,7 @@ public class UnitWeapon : MonoBehaviour
     {
         while (true)
         {
-            if(Target == null )
+            if(Target == null || Target.GetComponent<Enemy>().die == true)
             {
                 ChangeState(WeaponState.Search);
                 break;

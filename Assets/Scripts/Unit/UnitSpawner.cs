@@ -39,11 +39,11 @@ public class UnitSpawner : MonoBehaviour
     {
         for(int i = 0; i < 8; i++)
         {
-            unit1Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
-            unit2Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
-            unit3Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
-            unit4Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
-            unit5Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+            //unit1Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+            //unit2Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+            //unit3Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+            //unit4Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+            //unit5Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
         }
     }
 

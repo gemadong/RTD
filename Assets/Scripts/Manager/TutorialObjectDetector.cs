@@ -104,6 +104,7 @@ public class TutorialObjectDetector : MonoBehaviour
                     }
                     else if (hit.transform.CompareTag("Unit"))
                     {
+                        if (tutorialCount == 6) stop = false;
                         UDV.OnPane1(hit.transform);
 
                         unitWeapon = hit.transform.gameObject.GetComponent<UnitWeapon>();
@@ -116,9 +117,9 @@ public class TutorialObjectDetector : MonoBehaviour
                 {
                     if (hit.transform.CompareTag("Tile"))
                     {
-                        if (tutorialCount == 4) stop = false;
                         if (hit.transform.gameObject == tile.gameObject)
                         {
+                            if (tutorialCount == 4 || tutorialCount == 5) stop = false;
                             unitSpawner.SpawnUnit(tile.transform);
                             NoCheck();
                         }
@@ -129,6 +130,7 @@ public class TutorialObjectDetector : MonoBehaviour
                     }
                     else if (hit.transform.CompareTag("Unit"))
                     {
+                        if (tutorialCount == 7) stop = false;
                         if (unitWeapon == null || hit.transform.gameObject != unitWeapon.gameObject)
                         {
                             NoCheck();

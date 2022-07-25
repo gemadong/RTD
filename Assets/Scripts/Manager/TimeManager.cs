@@ -7,7 +7,7 @@ public class TimeManager : MonoBehaviour
 {
     public Text quickness;
 
-    int isSpeed = 1;
+    public int isSpeed = 1;
 
     public bool isStop = false;
 

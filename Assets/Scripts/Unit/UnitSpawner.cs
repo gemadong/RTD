@@ -6,6 +6,7 @@ public class UnitSpawner : MonoBehaviour
 {
     [SerializeField] private EnemySpawner ES;
     [SerializeField] private ObjectDetector OD;
+    [SerializeField] private TutorialObjectDetector TOD;
     [SerializeField] private PlayerGold playerGold;
     [SerializeField] private Hidden hidden;
     [SerializeField] private int unitBuildGold = 100;
@@ -169,6 +170,67 @@ public class UnitSpawner : MonoBehaviour
 
     public void UnitSelling()
     {
+        if (TOD != null)
+        {
+            if (TOD.unitWeapon != null)
+            {
+                if (TOD.unitWeapon.unitValue == UnitValue.Value1)
+                {
+                    unit1.Remove(TOD.unitWeapon);
+                    playerGold.CurrentGold += 50;
+                }
+                else if (TOD.unitWeapon.unitValue == UnitValue.Value2)
+                {
+                    unit2.Remove(TOD.unitWeapon);
+                    playerGold.CurrentGold += 100;
+                }
+                else if (TOD.unitWeapon.unitValue == UnitValue.Value3)
+                {
+                    unit3.Remove(TOD.unitWeapon);
+                    playerGold.CurrentGold += 200;
+                }
+                else if (TOD.unitWeapon.unitValue == UnitValue.Value4)
+                {
+                    unit4.Remove(TOD.unitWeapon);
+                    playerGold.CurrentGold += 400;
+                }
+                else if (TOD.unitWeapon.unitValue == UnitValue.Value5)
+                {
+                    unit5.Remove(TOD.unitWeapon);
+                    playerGold.CurrentGold += 800;
+                }
+                hidden.Hidden1();
+                hidden.Hidden2();
+                hidden.Hidden3();
+                hidden.Hidden4();
+                hidden.Hidden5();
+                hidden.Hidden6();
+                hidden.Hidden7();
+                hidden.Hidden8();
+                hidden.Hidden10();
+                hidden.Hidden11();
+                hidden.Hidden12();
+                hidden.Hidden13();
+                hidden.Hidden14();
+                hidden.Hidden15();
+                hidden.Hidden16();
+                hidden.Hidden17();
+                hidden.Hidden19();
+                hidden.Hidden20();
+                hidden.Hidden21();
+                hidden.Hidden22();
+                TOD.unitWeapon.currentTile.SR.color = TOD.unitWeapon.currentTile.reColor;
+                TOD.unitWeapon.currentTile.IsCheck = false;
+                TOD.unitWeapon.currentTile.IsBuildUnit = false;
+                TOD.unitWeapon.DestroyUnit();
+                TOD.IsCheckBlind = false;
+                TOD.NoCheck();
+            }
+            if(TOD.tutorialCount==23) TOD.TutorialPanel();
+
+            return;
+        }
+
         if (OD.unitWeapon != null)
         {
             if (OD.unitWeapon.unitValue == UnitValue.Value1)

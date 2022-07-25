@@ -32,7 +32,10 @@ public class RobbyManager : MonoBehaviour
 
 
 
-
+    public void TutorialGameStart()
+    {
+        SceneManager.LoadScene("TutorialScene");
+    }
 
     public void FastGameStart()
     {

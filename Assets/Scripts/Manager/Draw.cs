@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Draw : MonoBehaviour
 {
     [SerializeField] private Setting setting;
+    [SerializeField] private TutorialObjectDetector TOD;
     [SerializeField] private PlayerGold PG;
     [SerializeField] private UnitSpawner US;
     [SerializeField] private UpGrade upGrade;
@@ -23,10 +24,10 @@ public class Draw : MonoBehaviour
 
     private void Update()
     {
-        numberText[0].text = "»Ì±â (" + draw + ")";
-        numberText[1].text = "Rare (" + rare + ")";
-        numberText[2].text = "Unique (" + unique + ")";
-        numberText[3].text = "Epic (" + epic + ")";
+        numberText[0].text = "»Ì±â(" + draw + ")";
+        numberText[1].text = "(" + rare + ")";
+        numberText[2].text = "(" + unique + ")";
+        numberText[3].text = "(" + epic + ")";
     }
 
     public void Rare(int i)
@@ -36,6 +37,12 @@ public class Draw : MonoBehaviour
             US.isdraw = true;
             US.drawUnit.Add(US.unit3Prefab[i]);
             rare -= 1;
+
+            if(TOD != null&&TOD.tutorialCount==32)
+            {
+                TOD.TutorialPanel();
+                IsPanel();
+            }
         }
     }
 
@@ -65,14 +72,26 @@ public class Draw : MonoBehaviour
         {
             if(i== 1)
             {
+                if (TOD != null && TOD.tutorialCount == 30)
+                {
+                    return;
+                }
                 PG.CurrentGold += 400;
             }
             if (i == 2)
             {
+                if (TOD != null && TOD.tutorialCount == 30)
+                {
+                    return;
+                }
                 PG.CurrentGas += 200;
             }
             if (i == 3)
             {
+                if (TOD != null && TOD.tutorialCount == 30)
+                {
+                    TOD.TutorialPanel();
+                }
                 rare += 1;
             }
             draw -= 1;
@@ -87,6 +106,14 @@ public class Draw : MonoBehaviour
             if (hidden.ispanel == true) hidden.IsPanel();
             if (upGrade.ispanel == true) upGrade.IsPanel();
             if (setting.ispanel == true) setting.IsPanel();
+            if (TOD != null)
+            {
+                if (TOD.tutorialCount == 28)
+                {
+                    TOD.TutorialPanel();
+                    draw += 1;
+                }
+            }
             panel.SetActive(true);
             ispanel = true;
         }

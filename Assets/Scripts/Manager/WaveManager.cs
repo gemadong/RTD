@@ -7,9 +7,12 @@ public class WaveManager : MonoBehaviour
 {
     [SerializeField] private Wave[] waves;
     [SerializeField] private EnemySpawner ES;
+    [SerializeField] private TimeManager TM;
+    [SerializeField] private TutorialObjectDetector TOD;
     [SerializeField] private GameManager GM;
     [SerializeField] private PlayerGold PG;
     [SerializeField] private Text stageText;
+
     private int currentWaveIndex = -1;
     public int wave = 1;
 
@@ -22,6 +25,7 @@ public class WaveManager : MonoBehaviour
 
     public bool waitingTime = false;
     public bool TextTime = false;
+    public bool isStop = false;
 
     private void Update()
     {
@@ -35,15 +39,26 @@ public class WaveManager : MonoBehaviour
 
             if (wave == CurrentWave)
             {
+                if (wave == 1 && TOD != null) 
+                { 
+                    TOD.TutorialPanel();
+                    isStop = true;
+                }
+                if (wave == 2 && TOD != null)
+                {
+                    TOD.TutorialPanel();
+                    isStop = true;
+                }
                 PG.CurrentGold += 200;
                 if(wave % 10 == 0) PG.CurrentGold += 200;
                 wave++;
             }
             waitingTime = true;
-            currentTime += Time.deltaTime;
+            if(!isStop) currentTime += Time.deltaTime;
 
             if (currentTime > maxTime)
             {
+                if (wave == 1 && TOD != null) TOD.TutorialPanel();
                 StartWave();
                 TextTime = true;
                 currentTime = 0;
@@ -53,7 +68,9 @@ public class WaveManager : MonoBehaviour
         if (TextTime)
         {
             stageText.gameObject.SetActive(true);
-            f -= Time.deltaTime *0.5f;
+            if(TM.isSpeed==1) f -= Time.deltaTime *0.5f;
+            if(TM.isSpeed==2) f -= (Time.deltaTime *0.5f)*0.5f;
+            if(TM.isSpeed==3) f -= (Time.deltaTime *0.5f)*0.3333f;
             Color recolor = stageText.color;
             recolor.a = f;
             stageText.color = recolor;

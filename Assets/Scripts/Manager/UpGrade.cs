@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class UpGrade : MonoBehaviour
 {
     [SerializeField] private Setting setting;
+    [SerializeField] private TutorialObjectDetector TOD;
+    [SerializeField] private WaveManager WM;
     [SerializeField] private Mission mission;
     [SerializeField] private Draw draw;
     [SerializeField] private Hidden hidden;
@@ -297,14 +299,21 @@ public class UpGrade : MonoBehaviour
     {
         if (PG.CurrentGold >= 100)
         {
+            if (TOD != null)
+            {
+                if (TOD.tutorialCount == 25)
+                {
+                    TOD.TutorialPanel();
+                }
+            }
             PG.CurrentGold -= 100;
             randomGas = Random.Range(2, 11) * 10;
             PG.CurrentGas += randomGas;
             colora = 1f;
             isText = true;
             plusGas.gameObject.SetActive(true);
-
         }
+
     }
 
     public void IsPanel()
@@ -315,6 +324,14 @@ public class UpGrade : MonoBehaviour
             if (hidden.ispanel == true) hidden.IsPanel();
             if (draw.ispanel == true) draw.IsPanel();
             if (setting.ispanel == true) setting.IsPanel();
+            if (TOD != null)
+            {
+                if (TOD.tutorialCount == 24)
+                {
+                    TOD.TutorialPanel();
+                    PG.CurrentGold += 100;
+                }
+            }
             panel.SetActive(true);
             ispanel = true;
         }
@@ -322,6 +339,14 @@ public class UpGrade : MonoBehaviour
         {
             panel.SetActive(false);
             ispanel = false;
+            if (TOD != null)
+            {
+                if (TOD.tutorialCount == 26)
+                {
+                    TOD.TutorialPanel();
+                    WM.isStop = false;
+                }
+            }
         }
     }
 }

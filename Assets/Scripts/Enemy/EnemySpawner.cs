@@ -15,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private WaveManager WM;
     [SerializeField] private CameraShake CS;
     [SerializeField] private PlayerGold PG;
+    [SerializeField] private TutorialObjectDetector TOD;
 
 
     public Wave currentWave;
@@ -50,11 +51,10 @@ public class EnemySpawner : MonoBehaviour
         currentEnemyCount = currentWave.maxEnemyCount;
         StartCoroutine("SpawnEnemy");
     }
-    private void SpawnWay()
+    public void SpawnWay()
     {
         GameObject clone = Instantiate(WayPoint);
         WayPoint way = clone.GetComponent<WayPoint>();
-        
         way.Setup(wayPoints);
     }
     private IEnumerator SpawnEnemy()
@@ -83,6 +83,12 @@ public class EnemySpawner : MonoBehaviour
     }
     public void SpawnAnt(int i)
     {
+        if (TOD != null) 
+        { 
+            i = 0;
+            TOD.TutorialPanel();
+        } 
+
         if (i == 0 && mission.isCool1 == true) return;
         if (i == 1 && mission.isCool2 == true) return;
         if (i == 2 && mission.isCool3 == true) return;
@@ -100,7 +106,10 @@ public class EnemySpawner : MonoBehaviour
         spawnEnemyHP(clone, AnthpSlinder);
 
         currentEnemyCount++;
-
+        if (TOD != null)
+        {
+            TOD.ant = enemy;
+        }
 
     }
    

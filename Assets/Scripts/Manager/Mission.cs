@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class Mission : MonoBehaviour
 {
     [SerializeField] private Setting setting;
+    [SerializeField] private TutorialObjectDetector TOD;
+    [SerializeField] private GameObject clearImpect;
+    [SerializeField] private TimeManager TM;
     [SerializeField] private Draw draw;
     [SerializeField] private Hidden hidden;
     [SerializeField] private UpGrade upGrade;
@@ -14,6 +17,7 @@ public class Mission : MonoBehaviour
     [SerializeField] private GameObject Mission2panel;
     [SerializeField] private GameObject Mission3panel;
     [SerializeField] private GameObject botton;
+    [SerializeField] private Text bottonText;
 
     public bool ispanel = false;
 
@@ -79,6 +83,13 @@ public class Mission : MonoBehaviour
             if(upGrade.ispanel==true) upGrade.IsPanel();
             if(draw.ispanel==true) draw.IsPanel();
             if (setting.ispanel == true) setting.IsPanel();
+            if (TOD != null)
+            {
+                if(TOD.tutorialCount == 14)
+                {
+                    TOD.TutorialPanel();
+                }
+            }
             panel.SetActive(true);
             ispanel = true;
         }
@@ -92,7 +103,13 @@ public class Mission : MonoBehaviour
     {
         Color reColor = botton.GetComponent<Image>().color;
         botton.GetComponent<Image>().color = Color.yellow;
-        yield return new WaitForSeconds(0.2f);
+        bottonText.color = Color.yellow;
+        clearImpect.SetActive(true);
+        if (TM.isSpeed == 1) yield return new WaitForSeconds(0.3f);
+        if (TM.isSpeed == 2) yield return new WaitForSeconds(0.6f);
+        if (TM.isSpeed == 3) yield return new WaitForSeconds(0.9f);
         botton.GetComponent<Image>().color = reColor;
+        bottonText.color = reColor;
+        clearImpect.SetActive(false);
     }
 }

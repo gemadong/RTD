@@ -5073,7 +5073,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mission1
+  m_Text: "\uBC94\uC8C4\uC790"
 --- !u!222 &297824106
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28654,7 +28654,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mission3
+  m_Text: "\uBC94\uC8C4\uC790"
 --- !u!222 &1486393299
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -31821,7 +31821,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mission2
+  m_Text: "\uBC94\uC8C4\uC790"
 --- !u!222 &1683480634
 CanvasRenderer:
   m_ObjectHideFlags: 0

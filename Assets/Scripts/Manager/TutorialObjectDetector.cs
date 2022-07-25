@@ -6,6 +6,8 @@ public class TutorialObjectDetector : MonoBehaviour
 {
     [SerializeField] private WaveManager WM;
     [SerializeField] private UnitSpawner unitSpawner;
+    [SerializeField] private GameManager GM;
+    [SerializeField] private PlayerGold PG;
     [SerializeField] private UnitDataViewer UDV;
     [SerializeField] private Setting setting;
     [SerializeField] private Mission mission;
@@ -23,8 +25,9 @@ public class TutorialObjectDetector : MonoBehaviour
     public bool stop = false;
     public Tile tile;
     public UnitWeapon unitWeapon;
+    public Enemy ant;
 
-    [SerializeField] private int tutorialCount =1;
+    public int tutorialCount =1;
 
     private void Awake()
     {
@@ -35,6 +38,18 @@ public class TutorialObjectDetector : MonoBehaviour
 
     private void Update()
     {
+        if (tutorialCount == tutorialPanel.Length && Input.GetMouseButtonDown(0)) 
+        { 
+            GM.RobbyStart(); 
+            return;
+        } 
+
+        if (ant != null && ant.die == true) 
+        { 
+            TutorialPanel();
+            ant = null;
+        }
+
         if (mission.ispanel == true || hidden.ispanel == true || upGrade.ispanel == true || draw.ispanel == true || setting.ispanel == true) Iswindow = true;
         else if (mission.ispanel == false && hidden.ispanel == false && upGrade.ispanel == false && draw.ispanel == false && setting.ispanel == false) Iswindow = false;
         if (Iswindow && IsCheckBlind) NoCheck();
@@ -65,7 +80,7 @@ public class TutorialObjectDetector : MonoBehaviour
         
     }
 
-    private void TutorialPanel()
+    public void TutorialPanel()
     {
         if (tutorialCount >= tutorialPanel.Length) return;
 
@@ -79,11 +94,23 @@ public class TutorialObjectDetector : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (tutorialCount == 1 || tutorialCount == 3 || tutorialCount == 9) 
+            if (tutorialCount == 1 || tutorialCount == 3 || tutorialCount == 29) 
             { 
                 stop = false;
                 return;
-            } 
+            }
+            if (tutorialCount == 9)
+            {
+                WM.gameObject.GetComponent<EnemySpawner>().SpawnWay();
+                stop = false;
+                return;
+            }
+            if (tutorialCount == 11)
+            {
+                WM.enabled = true;
+                stop = false;
+                return;
+            }
             ray = camera.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
@@ -99,12 +126,12 @@ public class TutorialObjectDetector : MonoBehaviour
                             if (tile.IsBuildUnit == true) return;
                             tile.IsCheck = true;
                             IsCheckBlind = true;
-                            if (tutorialCount == 2) stop = false; return;
+                            if (tutorialCount == 2 || tutorialCount == 33) stop = false; return;
                         }
                     }
                     else if (hit.transform.CompareTag("Unit"))
                     {
-                        if (tutorialCount == 6 || tutorialCount == 8) stop = false;
+                        if (tutorialCount == 6 || tutorialCount == 8 || tutorialCount == 22) stop = false;
                         UDV.OnPane1(hit.transform);
 
                         unitWeapon = hit.transform.gameObject.GetComponent<UnitWeapon>();
@@ -119,7 +146,7 @@ public class TutorialObjectDetector : MonoBehaviour
                     {
                         if (hit.transform.gameObject == tile.gameObject)
                         {
-                            if (tutorialCount == 4 || tutorialCount == 5) stop = false;
+                            if (tutorialCount == 4 || tutorialCount == 5 || tutorialCount == 34) stop = false;
                             unitSpawner.SpawnUnit(tile.transform);
                             NoCheck();
                         }
@@ -231,5 +258,10 @@ public class TutorialObjectDetector : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         unitWeapon = null;
+    }
+
+    public void NextTutorial()
+    {
+        if(tutorialCount==29 || tutorialCount == 31) TutorialPanel();
     }
 }

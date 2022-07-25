@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Hidden : MonoBehaviour
 {
     [SerializeField] private Setting setting;
+    [SerializeField] private TutorialObjectDetector TOD;
+    [SerializeField] private TimeManager TM;
     [SerializeField] private UnitSpawner US;
     [SerializeField] private EnemySpawner ES;
     [SerializeField] private PlayerGold PG;
@@ -15,6 +17,8 @@ public class Hidden : MonoBehaviour
     [SerializeField] private UpGrade upGrade;
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject botton;
+    [SerializeField] private GameObject clearImpect;
+    [SerializeField] private Text bottonText;
     [SerializeField] private Text hidden1;
     [SerializeField] private Text hidden2;
     [SerializeField] private Text hidden3;
@@ -223,6 +227,7 @@ public class Hidden : MonoBehaviour
                 hiddenObj2.Clear();
                 StartCoroutine("HiddenClearBotten");
                 hiddenClear2 = true;
+                if (TOD != null) TOD.TutorialPanel();
             }
 
         }
@@ -1341,6 +1346,14 @@ public class Hidden : MonoBehaviour
             if (upGrade.ispanel == true) upGrade.IsPanel();
             if (draw.ispanel == true) draw.IsPanel();
             if (setting.ispanel == true) setting.IsPanel();
+            if (TOD != null)
+            {
+                if (TOD.tutorialCount == 17 || TOD.tutorialCount == 20)
+                {
+                    TOD.TutorialPanel();
+                }
+            }
+
             panel.SetActive(true);
             ispanel = true;
         }
@@ -1348,6 +1361,14 @@ public class Hidden : MonoBehaviour
         {
             panel.SetActive(false);
             ispanel = false;
+            if (TOD != null)
+            {
+                if (TOD.tutorialCount == 18 || TOD.tutorialCount == 21)
+                {
+                    if (TOD.tutorialCount == 18) PG.CurrentGold += 700;
+                    TOD.TutorialPanel();
+                }
+            }
         }
     }
 
@@ -1355,8 +1376,14 @@ public class Hidden : MonoBehaviour
     {
         Color reColor = botton.GetComponent<Image>().color;
         botton.GetComponent<Image>().color = Color.yellow;
-        yield return new WaitForSeconds(0.2f);
+        bottonText.color = Color.yellow;
+        clearImpect.SetActive(true);
+        if (TM.isSpeed==1) yield return new WaitForSeconds(0.3f);
+        if(TM.isSpeed==2) yield return new WaitForSeconds(0.6f);
+        if(TM.isSpeed==3) yield return new WaitForSeconds(0.9f);
         botton.GetComponent<Image>().color = reColor;
+        bottonText.color = reColor;
+        clearImpect.SetActive(false);
     }
 
 }

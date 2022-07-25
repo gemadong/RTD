@@ -39,17 +39,22 @@ public class WayPoint : MonoBehaviour
     {
         if (currentIndex < wayPointCount - 1)
         {
-
+            if (currentIndex == 1 || currentIndex == 2 || currentIndex == 5 || currentIndex == 6 || currentIndex == 9 || currentIndex == 10)
+            {
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+            }
+            else transform.localScale = new Vector3(1f, 1f, 1f);
             transform.position = wayPoints[currentIndex].position;
             currentIndex++;
             Vector3 direction = (wayPoints[currentIndex].position - transform.position).normalized;
             movement.MoveTo(direction);
             
-            transform.rotation = Quaternion.Euler(0, 0, (currentIndex - 1) * 90f);
-
+            
         }
         else
         {
+            FindObjectOfType<TutorialObjectDetector>().stop = false;
+            FindObjectOfType<TutorialObjectDetector>().TutorialPanel();
             Destroy(gameObject);
         }
     }

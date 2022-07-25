@@ -79,7 +79,7 @@ public class TutorialObjectDetector : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (tutorialCount == 1 || tutorialCount == 3) 
+            if (tutorialCount == 1 || tutorialCount == 3 || tutorialCount == 9) 
             { 
                 stop = false;
                 return;
@@ -104,7 +104,7 @@ public class TutorialObjectDetector : MonoBehaviour
                     }
                     else if (hit.transform.CompareTag("Unit"))
                     {
-                        if (tutorialCount == 6) stop = false;
+                        if (tutorialCount == 6 || tutorialCount == 8) stop = false;
                         UDV.OnPane1(hit.transform);
 
                         unitWeapon = hit.transform.gameObject.GetComponent<UnitWeapon>();

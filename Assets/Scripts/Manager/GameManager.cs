@@ -56,6 +56,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("RobbyScene");
     }
-
+    public void TutorialGameStart()
+    {
+        SceneManager.LoadScene("TutorialScene");
+    }
 
 }

@@ -35,6 +35,9 @@ public class CannonBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!other.CompareTag("Enemy")) return;
+        if (other.transform != target) return;
+
         Color recolor = this.GetComponent<SpriteRenderer>().color;
         recolor.a = 0;
         this.GetComponent<SpriteRenderer>().color = recolor;

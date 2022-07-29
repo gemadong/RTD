@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ModeState
+{
+    MainMode,
+    TutorialMode
+}
+
 public class UnitSpawner : MonoBehaviour
 {
     [SerializeField] private EnemySpawner ES;
@@ -10,6 +16,7 @@ public class UnitSpawner : MonoBehaviour
     [SerializeField] private PlayerGold playerGold;
     [SerializeField] private Hidden hidden;
     [SerializeField] private int unitBuildGold = 100;
+    [SerializeField] private ModeState modeState;
 
 
     public int Num;
@@ -38,13 +45,16 @@ public class UnitSpawner : MonoBehaviour
     
     private void Start()
     {
-        for(int i = 0; i < 8; i++)
-        {
-            //unit1Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
-            //unit2Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
-            //unit3Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
-            //unit4Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
-            //unit5Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+        if (modeState != ModeState.TutorialMode) 
+        { 
+            for(int i = 0; i < 8; i++)
+            {
+                unit1Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+                unit2Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+                unit3Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+                unit4Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+                unit5Prefab[i].reinforce = Singleton.instance.classCount[i] - 1;
+            }
         }
     }
 

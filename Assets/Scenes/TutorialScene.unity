@@ -27114,6 +27114,7 @@ MonoBehaviour:
   draw: {fileID: 687912893}
   hidden: {fileID: 1721176076}
   panel: {fileID: 1911095102}
+  effect: {fileID: 2733247010544334549, guid: 367a2daf4ddf9644d9f21b1dd6943a99, type: 3}
   US: {fileID: 1811354463}
   PG: {fileID: 1343000171}
   CostText:

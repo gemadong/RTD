@@ -12,6 +12,7 @@ public class UpGrade : MonoBehaviour
     [SerializeField] private Draw draw;
     [SerializeField] private Hidden hidden;
     [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject effect;
     [SerializeField] private UnitSpawner US;
     [SerializeField] private PlayerGold PG;
     [SerializeField] private Text[] CostText;
@@ -262,6 +263,10 @@ public class UpGrade : MonoBehaviour
         {
             if (US.unit1[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
+                GameObject clone = Instantiate(effect, US.unit1[i].transform.position, Quaternion.identity);
+                Vector3 EffectPos = clone.transform.position;
+                EffectPos.y += 0.1f;
+                clone.transform.position = EffectPos;
                 US.unit1[i].GetComponent<UnitWeapon>().PowerUP(a);
             }
         }
@@ -269,6 +274,10 @@ public class UpGrade : MonoBehaviour
         {
             if (US.unit2[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
+                GameObject clone = Instantiate(effect, US.unit1[i].transform.position, Quaternion.identity);
+                Vector3 EffectPos = clone.transform.position;
+                EffectPos.y += 0.1f;
+                clone.transform.position = EffectPos;
                 US.unit2[i].GetComponent<UnitWeapon>().PowerUP(b);
             }
         }
@@ -276,6 +285,10 @@ public class UpGrade : MonoBehaviour
         {
             if (US.unit3[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
+                GameObject clone = Instantiate(effect, US.unit1[i].transform.position, Quaternion.identity);
+                Vector3 EffectPos = clone.transform.position;
+                EffectPos.y += 0.1f;
+                clone.transform.position = EffectPos;
                 US.unit3[i].GetComponent<UnitWeapon>().PowerUP(c);
             }
         }
@@ -283,6 +296,10 @@ public class UpGrade : MonoBehaviour
         {
             if (US.unit4[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
+                GameObject clone = Instantiate(effect, US.unit1[i].transform.position, Quaternion.identity);
+                Vector3 EffectPos = clone.transform.position;
+                EffectPos.y += 0.1f;
+                clone.transform.position = EffectPos;
                 US.unit4[i].GetComponent<UnitWeapon>().PowerUP(d);
             }
         }
@@ -290,6 +307,10 @@ public class UpGrade : MonoBehaviour
         {
             if (US.unit5[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
+                GameObject clone = Instantiate(effect, US.unit1[i].transform.position, Quaternion.identity);
+                Vector3 EffectPos = clone.transform.position;
+                EffectPos.y += 0.1f;
+                clone.transform.position = EffectPos;
                 US.unit5[i].GetComponent<UnitWeapon>().PowerUP(e);
             }
         }

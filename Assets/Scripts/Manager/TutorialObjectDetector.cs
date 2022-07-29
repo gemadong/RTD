@@ -262,6 +262,7 @@ public class TutorialObjectDetector : MonoBehaviour
 
     public void NextTutorial()
     {
-        if(tutorialCount==29 || tutorialCount == 31) TutorialPanel();
+        if(tutorialCount==29) TutorialPanel();
+        if (tutorialCount == 31) StartCoroutine(draw.Panel32());
     }
 }

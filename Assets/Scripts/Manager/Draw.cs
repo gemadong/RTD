@@ -123,4 +123,10 @@ public class Draw : MonoBehaviour
             ispanel = false;
         }
     }
+    public IEnumerator Panel32()
+    {
+        yield return new WaitForSeconds(1f);
+        TOD.TutorialPanel();
+    }
+
 }

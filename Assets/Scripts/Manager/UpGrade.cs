@@ -274,7 +274,7 @@ public class UpGrade : MonoBehaviour
         {
             if (US.unit2[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
-                GameObject clone = Instantiate(effect, US.unit1[i].transform.position, Quaternion.identity);
+                GameObject clone = Instantiate(effect, US.unit2[i].transform.position, Quaternion.identity);
                 Vector3 EffectPos = clone.transform.position;
                 EffectPos.y += 0.1f;
                 clone.transform.position = EffectPos;
@@ -285,7 +285,7 @@ public class UpGrade : MonoBehaviour
         {
             if (US.unit3[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
-                GameObject clone = Instantiate(effect, US.unit1[i].transform.position, Quaternion.identity);
+                GameObject clone = Instantiate(effect, US.unit3[i].transform.position, Quaternion.identity);
                 Vector3 EffectPos = clone.transform.position;
                 EffectPos.y += 0.1f;
                 clone.transform.position = EffectPos;
@@ -296,7 +296,7 @@ public class UpGrade : MonoBehaviour
         {
             if (US.unit4[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
-                GameObject clone = Instantiate(effect, US.unit1[i].transform.position, Quaternion.identity);
+                GameObject clone = Instantiate(effect, US.unit4[i].transform.position, Quaternion.identity);
                 Vector3 EffectPos = clone.transform.position;
                 EffectPos.y += 0.1f;
                 clone.transform.position = EffectPos;
@@ -307,7 +307,7 @@ public class UpGrade : MonoBehaviour
         {
             if (US.unit5[i].GetComponent<UnitWeapon>().unitType == unitType)
             {
-                GameObject clone = Instantiate(effect, US.unit1[i].transform.position, Quaternion.identity);
+                GameObject clone = Instantiate(effect, US.unit5[i].transform.position, Quaternion.identity);
                 Vector3 EffectPos = clone.transform.position;
                 EffectPos.y += 0.1f;
                 clone.transform.position = EffectPos;

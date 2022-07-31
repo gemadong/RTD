@@ -25878,7 +25878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b06f6f02e36e2b94fa1943408da2c4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentGold: 400
+  currentGold: 400000
   currentGas: 0
   ant1: 0
   ant2: 0
